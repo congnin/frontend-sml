@@ -2,7 +2,7 @@
 In this module, I provided a brief introduction into some core next-gen JavaScript features, of course focusing on the ones you'll see the most in this course. Here's a quick summary!
 
 ## let & const
-Read more about let : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
+Read more about *let* : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
 
 Read more about const : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
 
