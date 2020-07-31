@@ -2,22 +2,25 @@
 In this module, I provided a brief introduction into some core next-gen JavaScript features, of course focusing on the ones you'll see the most in this course. Here's a quick summary!
 
 ## let & const
-Read more about *let* : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
+Read more about **let** : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
 
-Read more about const : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
+Read more about **const** : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
 
-let  and const  basically replace var . You use let  instead of var  and const  instead of var  if you plan on never re-assigning this "variable" (effectively turning it into a constant therefore).
+*let* and *const* basically replace *var* . You use *let* instead of *var* and *const* instead of *var* if you plan on never re-assigning this "variable" (effectively turning it into a constant therefore).
 
 ## ES6 Arrow Functions
 Read more: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 
-Arrow functions are a different way of creating functions in JavaScript. Besides a shorter syntax, they offer advantages when it comes to keeping the scope of the this  keyword (see here).
+Arrow functions are a different way of creating functions in JavaScript. Besides a shorter syntax, they offer advantages when it comes to keeping the scope of the *this* keyword (see [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions#No_binding_of_this)).
 
 Arrow function syntax may look strange but it's actually simple.
 
+`<
 function callMe(name) { 
     console.log(name);
 }
+>`
+
 which you could also write as:
 
 const callMe = function(name) { 
