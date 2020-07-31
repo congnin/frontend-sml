@@ -15,11 +15,9 @@ Arrow functions are a different way of creating functions in JavaScript. Besides
 
 Arrow function syntax may look strange but it's actually simple.
 
-`<
-function callMe(name) { 
-    console.log(name);
-}
->`
+`<function callMe(name) {>` 
+`<    console.log(name);>`
+`<}>`
 
 which you could also write as:
 
