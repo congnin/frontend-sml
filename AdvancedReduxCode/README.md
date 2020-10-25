@@ -11,3 +11,12 @@ Code repository for an awesome course on React and Redux.  See [here](https://ww
 ![](HOC/5.png)
 ![](HOC/6.png)
 ![](HOC/7.png)
+
+## Middileware
+
+![](middlewares/1.png)
+![](middlewares/2.png)
+![](middlewares/3.png)
+![](middlewares/4.png)
+![](middlewares/6.png)
+
