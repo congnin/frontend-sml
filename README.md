@@ -2,14 +2,16 @@
 
 ## JS Array Functions
 
-* **map()**  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
-* **find()**  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
-* **findIndex()**  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
-* **filter()**  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
-* **reduce()**  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce?v=b
-* **concat()**  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat?v=b
-* **slice()**  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
-* **splice()**  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+- **map()** => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+- **find()** => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+- **findIndex()** => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+- **filter()** => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+- **reduce()** => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce?v=b
+- **concat()** => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat?v=b
+- **slice()** => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+- **splice()** => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+
+---
 
 ## Plugin should have
 
@@ -23,4 +25,16 @@
 8. **npm Intellisense** => Visual Studio Code plugin that autocompletes npm modules in import statements.
 9. **Prettier** => Prettier is an opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.
 10. **ESLint**
+11. **TODO Highlight** => Highlight TODO, FIXME and other annotations within your code.
+12. **Image preview** => Shows image preview in the gutter and on hover
 
+---
+
+## Create Hosted MongoDB with Atlas
+
+1. Go to [link](https://www.mongodb.com/cloud/atlas)
+2. c\*1990@gmail.com - th\*81\*41
+3. Download Compass App [link](https://www.mongodb.com/try/download/compass)
+4. Connect
+   ![Connect to Cluster](mongodb/1.png)
+   ![I have MongoDB Compass](mongodb/2.png)
