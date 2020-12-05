@@ -38,3 +38,6 @@
 4. Connect
    ![Connect to Cluster](mongodb/1.png)
    ![I have MongoDB Compass](mongodb/2.png)
+
+## Study flexbox by game
+[link](https://flexboxfroggy.com/#vi)
