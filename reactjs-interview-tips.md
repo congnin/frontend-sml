@@ -69,13 +69,13 @@ Phần này mục đích là để trả lời phần câu hỏi về kiến th�
 ### JAVASCRIPT
 
 - "use strict"
-- var, const, let khác nhau ra sao?
+- [var, const, let khác nhau ra sao?](https://viblo.asia/p/phan-biet-kieu-bien-var-let-va-const-trong-javascript-ORNZqaOnZ0n)
 - Block scope với Function scope
 - Hoisting là gì? Cái này có thể bị hỏi dạng cho đoạn code rồi hỏi kết quả và giải thích.
-- Closure
+- [Closure](https://techmaster.vn/posts/34337/tim-hieu-ve-javascript-closures)
 - Value type vs reference type 
-- Bất đồng bộ trong javascript
-- setTimeout(), setInterval()
+- [Bất đồng bộ trong javascript](https://completejavascript.com/xu-ly-bat-dong-bo-callback-promise-async-await)
+- [setTimeout(), setInterval()](https://viblo.asia/p/tim-hieu-settimeout-va-setinterval-trong-javascript-aWj53pgQK6m)
 - Callback
 - Promise
 - Module trong javascript: import, export, ...
@@ -88,9 +88,9 @@ Phần này mục đích là để trả lời phần câu hỏi về kiến th�
 
 - Component vs PureComponent 
 - `Life cycle`: cái nào nên sử dụng cho mục đích nào (cái này mình có share trên kênh Youtube của mình)
-- Phân biệt `component state`, `Context API` và `Redux`: khi nào sử dụng cái nào và lý do.
-- **Refs trong reactjs**: bạn có dùng nó chưa và dùng cho việc gì? Hoặc ngược lại cho tình huống xài refs để giải quyết xem bạn có biết hay không ?
-- Routing thì có phần nested routing, nó là gì và khi nào cần nó.
+- Phân biệt `component state`, `Context API` và `Redux`: khi nào sử dụng cái nào và lý do. [link](https://viblo.asia/p/context-api-danh-bay-redux-trong-1-not-nhac-L4x5x4Yq5BM)
+- **Refs trong reactjs**: bạn có dùng nó chưa và dùng cho việc gì? Hoặc ngược lại cho tình huống xài refs để giải quyết xem bạn có biết hay không ? [link](https://freetuts.net/refs-trong-reactjs-2430.html)
+- Routing thì có phần nested routing, nó là gì và khi nào cần nó. [link](https://vuilaptrinh.com/2017-07-31-react-router/)
 - Setup routing cho mấy trang cần phải log in như thế nào?
 - Form bạn dùng thư viện nào để quản lý: `Formik`, `Redux-Form`, `React-Hook-Form`. Mỗi cái sẽ có những vấn đề riêng có thể hỏi.
 - `Auth`: bạn handle phần authentication trong app như thế nào? Token, refresh token, expired token? ( nâng cao )
