@@ -1,21 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import queryString from 'query-string';
+import React, { useState, useEffect } from "react";
+import queryString from "query-string";
 
-import './App.scss';
-import TodoList from './components/TodoList';
-import TodoForm from './components/TodoForm';
-import PostList from './components/PostList';
-import Pagination from './components/Pagination';
-import PostFiltersForm from './components/PostFiltersForm';
-import Clock from './components/Clock';
-import BetterClock from './components/BetterClock';
-import MagicBox from './components/MagicBox';
+import "./App.scss";
+import TodoList from "./components/TodoList";
+import TodoForm from "./components/TodoForm";
+import PostList from "./components/PostList";
+import Pagination from "./components/Pagination";
+import PostFiltersForm from "./components/PostFiltersForm";
+import Clock from "./components/Clock";
+import BetterClock from "./components/BetterClock";
+import MagicBox from "./components/MagicBox";
+import AutoSuggestionExample from "./components/AutoSuggestion";
 
 function App() {
   const [todoList, setTodoList] = useState([
-    { id: 1, title: 'I love Easy Frontend! 😍' },
-    { id: 2, title: 'We love Easy Frontend! 🥰' },
-    { id: 3, title: 'They love Easy Frontend! 🚀' },
+    { id: 1, title: "I love Easy Frontend! 😍" },
+    { id: 2, title: "We love Easy Frontend! 🥰" },
+    { id: 3, title: "They love Easy Frontend! 🚀" },
   ]);
 
   const [postList, setPostList] = useState([]);
@@ -44,20 +45,20 @@ function App() {
         setPostList(data);
         setPagination(pagination);
       } catch (error) {
-        console.log('Failed to fetch post list: ', error.message);
+        console.log("Failed to fetch post list: ", error.message);
       }
     }
 
-    console.log('POST list effect');
+    console.log("POST list effect");
     fetchPostList();
   }, [filters]);
 
   useEffect(() => {
-    console.log('TODO list effect');
+    console.log("TODO list effect");
   });
 
   function handlePageChange(newPage) {
-    console.log('New page: ', newPage);
+    console.log("New page: ", newPage);
     setFilters({
       ...filters,
       _page: newPage,
@@ -66,7 +67,7 @@ function App() {
 
   function handleTodoClick(todo) {
     console.log(todo);
-    const index = todoList.findIndex(x => x.id === todo.id);
+    const index = todoList.findIndex((x) => x.id === todo.id);
     if (index < 0) return;
 
     const newTodoList = [...todoList];
@@ -75,7 +76,7 @@ function App() {
   }
 
   function handleTodoFormSubmit(formValues) {
-    console.log('Form submit: ', formValues);
+    console.log("Form submit: ", formValues);
     // add new todo to current todo list
     const newTodo = {
       id: todoList.length + 1,
@@ -87,7 +88,7 @@ function App() {
   }
 
   function handleFiltersChange(newFilters) {
-    console.log('New filters: ', newFilters);
+    console.log("New filters: ", newFilters);
     setFilters({
       ...filters,
       _page: 1,
@@ -98,10 +99,10 @@ function App() {
   const [showClock, setShowClock] = useState(true);
 
   return (
-    <div className="app">
+    <div className='app'>
       <h1>React hooks - Clock</h1>
 
-      <MagicBox />
+      {/* <MagicBox /> */}
 
       {/* {showClock && <Clock />} */}
       {/* <BetterClock /> */}
@@ -112,10 +113,9 @@ function App() {
 
       {/* <PostFiltersForm onSubmit={handleFiltersChange} />
       <PostList posts={postList} />
-      <Pagination
-        pagination={pagination}
-        onPageChange={handlePageChange}
-      /> */}
+      <Pagination pagination={pagination} onPageChange={handlePageChange} /> */}
+
+      <AutoSuggestionExample />
     </div>
   );
 }
