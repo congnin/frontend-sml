@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/comment.css" />
+    <title>Bootstrap Theme</title>
+    <script>
+      function onClickHeart(control){
+        const commentContainer = document.getElementsByClassName("comment-input-container");
+        const heartContainer = document.getElementsByClassName("heart-container");
+        if(commentContainer[0] && commentContainer[0].classList.contains("active")){
+          commentContainer[0] && commentContainer[0].classList.remove("active")
+          heartContainer[0] && heartContainer[0].classList.remove("active")
+        }
+        else{
+          commentContainer[0] && commentContainer[0].classList.add("active")
+          heartContainer[0] && heartContainer[0].classList.add("active")
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">Blogen</a>
+        <button
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item px-2">
+              <a href="index.html" class="nav-link">Dashboard</a>
+            </li>
+            <li class="nav-item px-2">
+              <a href="profile.html" class="nav-link"
+                ><img
+                  src="https://picsum.photos/id/294/300/300"
+                  width="40"
+                  height="40"
+                  alt=""
+                  class="img-fluid rounded-circle"
+                />
+                Welcome Brad</a
+              >
+            </li>
+            <li class="nav-item px-2">
+              <a href="login.html" class="nav-link">
+                <i class="fas fa-user-times"></i> Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="detail-container">
+      <div class="container">
+        <div class="detail-highlight">
+          Chi tiết thành viên
+        </div>
+        <div class="detail-panel">
+          
+          <div class="left-panel">
+           
+            <div class="personal-panel">
+              <div class="personal-name">
+                JDOE
+              </div>
+              <div class="personal-img-container">
+                <div class="personal-img">
+                  <img
+                    src="https://static.billboard.com/files/2020/12/Taylor-Swift-VMA-2019-billboard-1548-1607693369-compressed.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="heart-container" onclick="onClickHeart()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fff" fill-opacity="1" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <div class="personal-detail">
+                  <div class="bold">Role</div>
+                  <div>DEV</div>
+                </div>
+                <div class="personal-detail">
+                  <div class="bold">Team</div>
+                  <div>Personal Loan</div>
+                </div>
+                <div class="personal-detail">
+                  <div class="bold">Like</div>
+                  <div>1.700</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-panel">
+            <div class="comment-list-container">
+              <section id="users">
+                <div class="">
+                  <div class="row d-flex justify-content-center">
+                    <div class="col">
+                      
+                      <div
+                        class="headings d-flex justify-content-between align-items-center mb-3"
+                      >
+                        <h5>Latest comments(6)</h5>
+                      </div>
+                      <div class="list-comment">
+                        <div class="comment-input-container">
+                          <textarea name="" id=""></textarea>
+                          <div class="send-button-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#54c2e8" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm2.5 8.5a.5.5 0 0 1 0-1h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5z"/>
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="card p-3">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="user d-flex flex-row align-items-center  user-comment-list user-comment-list">
+                              <div class="user-img-container">
+                                <div class="user-img">
+                                  <div class="img-container">
+                                    <img
+                                      src="https://static.billboard.com/files/2020/12/Taylor-Swift-VMA-2019-billboard-1548-1607693369-compressed.jpg"
+                                      alt=""
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <span
+                                ><small class="font-weight-bold text-primary"
+                                  >james_olesenn</small
+                                >
+                                <small class="font-weight-bold"
+                                  >Hmm, This poster looks cool</small
+                                ></span
+                              >
+                            </div>
+                            <small>2 days ago</small>
+                          </div>
+                          <div
+                            class="action d-flex justify-content-between mt-2 align-items-center"
+                          >
+                            <div class="reply px-4">
+                              <i class="fas fa-edit mx-2"> <small>Edit</small></i>
+                              <i class="fas fa-trash"> <small>Remove</small></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card p-3 mt-2">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="user d-flex flex-row align-items-center  user-comment-list">
+                              <div class="user-img-container">
+                                <div class="user-img">
+                                  <div class="img-container">
+                                    <img
+                                      src="https://static.billboard.com/files/2020/12/Taylor-Swift-VMA-2019-billboard-1548-1607693369-compressed.jpg"
+                                      alt=""
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <span
+                                ><small class="font-weight-bold text-primary"
+                                  >olan_sams</small
+                                >
+                                <small class="font-weight-bold"
+                                  >Loving your work and profile!
+                                </small></span
+                              >
+                            </div>
+                            <small>3 days ago</small>
+                          </div>
+                          <div
+                            class="action d-flex justify-content-between mt-2 align-items-center"
+                          >
+                            <div class="reply px-4">
+                              <small>Remove</small> <span class="dots"></span>
+                              <small>Reply</small> <span class="dots"></span>
+                              <small>Translate</small>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card p-3 mt-2">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="user d-flex flex-row align-items-center  user-comment-list">
+                              <div class="user-img-container">
+                                <div class="user-img">
+                                  <div class="img-container">
+                                    <img
+                                      src="https://static.billboard.com/files/2020/12/Taylor-Swift-VMA-2019-billboard-1548-1607693369-compressed.jpg"
+                                      alt=""
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <span
+                                ><small class="font-weight-bold text-primary"
+                                  >rashida_jones</small
+                                >
+                                <small class="font-weight-bold"
+                                  >Really cool Which filter are you using?
+                                </small></span
+                              >
+                            </div>
+                            <small>3 days ago</small>
+                          </div>
+                          <div
+                            class="action d-flex justify-content-between mt-2 align-items-center"
+                          >
+                            <div class="reply px-4">
+                              <small>Remove</small> <span class="dots"></span>
+                              <small>Reply</small> <span class="dots"></span>
+                              <small>Translate</small>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card p-3 mt-2">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="user d-flex flex-row align-items-center  user-comment-list">
+                              <div class="user-img-container">
+                                <div class="user-img">
+                                  <div class="img-container">
+                                    <img
+                                      src="https://static.billboard.com/files/2020/12/Taylor-Swift-VMA-2019-billboard-1548-1607693369-compressed.jpg"
+                                      alt=""
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <span
+                                ><small class="font-weight-bold text-primary"
+                                  >simona_rnasi</small
+                                >
+                                <small class="font-weight-bold text-primary"
+                                  >@macky_lones</small
+                                >
+                                <small class="font-weight-bold text-primary"
+                                  >@rashida_jones</small
+                                >
+                                <small class="font-weight-bold">Thanks </small></span
+                              >
+                            </div>
+                            <small>3 days ago</small>
+                          </div>
+                          <div
+                            class="action d-flex justify-content-between mt-2 align-items-center"
+                          >
+                            <div class="reply px-4">
+                              <small>Remove</small> <span class="dots"></span>
+                              <small>Reply</small> <span class="dots"></span>
+                              <small>Translate</small>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card p-3 mt-2">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="user d-flex flex-row align-items-center  user-comment-list">
+                              <div class="user-img-container">
+                                <div class="user-img">
+                                  <div class="img-container">
+                                    <img
+                                      src="https://static.billboard.com/files/2020/12/Taylor-Swift-VMA-2019-billboard-1548-1607693369-compressed.jpg"
+                                      alt=""
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <span
+                                ><small class="font-weight-bold text-primary"
+                                  >simona_rnasi</small
+                                >
+                                <small class="font-weight-bold text-primary"
+                                  >@macky_lones</small
+                                >
+                                <small class="font-weight-bold text-primary"
+                                  >@rashida_jones</small
+                                >
+                                <small class="font-weight-bold">Thanks </small></span
+                              >
+                            </div>
+                            <small>3 days ago</small>
+                          </div>
+                          <div
+                            class="action d-flex justify-content-between mt-2 align-items-center"
+                          >
+                            <div class="reply px-4">
+                              <small>Remove</small> <span class="dots"></span>
+                              <small>Reply</small> <span class="dots"></span>
+                              <small>Translate</small>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card p-3 mt-2">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="user d-flex flex-row align-items-center  user-comment-list">
+                              <div class="user-img-container">
+                                <div class="user-img">
+                                  <div class="img-container">
+                                    <img
+                                      src="https://static.billboard.com/files/2020/12/Taylor-Swift-VMA-2019-billboard-1548-1607693369-compressed.jpg"
+                                      alt=""
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <span
+                                ><small class="font-weight-bold text-primary"
+                                  >simona_rnasi</small
+                                >
+                                <small class="font-weight-bold text-primary"
+                                  >@macky_lones</small
+                                >
+                                <small class="font-weight-bold text-primary"
+                                  >@rashida_jones</small
+                                >
+                                <small class="font-weight-bold">Thanks </small></span
+                              >
+                            </div>
+                            <small>3 days ago</small>
+                          </div>
+                          <div
+                            class="action d-flex justify-content-between mt-2 align-items-center"
+                          >
+                            <div class="reply px-4">
+                              <small>Remove</small> <span class="dots"></span>
+                              <small>Reply</small> <span class="dots"></span>
+                              <small>Translate</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="row">
+                    <div class="col">
+                      <nav aria-label="..." class="mt-4">
+                        <ul class="pagination-container">
+                          <li class="disabled"><a href="">Previous</a></li>
+                          <li><a href="">1</a></li>
+                          <li class="active"><a href="">2</a></li>
+                          <li><a href="">3</a></li>
+                          <li><a href="">Next</a></li>
+                        </ul>
+                      </nav>
+                    </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- USERS -->
+   
+
+    <!-- ADD CATEGORY MODAL -->
+    <div class="modal fade" id="addCommentModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title">Add Comment</h5>
+            <button class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="title">Content</label>
+                <input type="text" class="form-control" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success" data-dismiss="modal">
+              Save Changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" id="deleteCommentModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Confirm</h5>
+            <button
+              type="button"
+              class="close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Delete like this member?</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="http://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+      integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      // Get the current year for the copyright
+      $("#year").text(new Date().getFullYear());
+    </script>
+  </body>
+</html>
