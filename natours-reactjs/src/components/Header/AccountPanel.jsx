@@ -2,11 +2,12 @@ import React, { useEffect } from 'react';
 import Images from 'constants/images';
 import RouteEnum from 'constants/RouteEnum';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import * as actions from '../../app/actions';
 
 export function AccountPanel(props) {
   const dispatch = useDispatch();
+  const history = useHistory();
   const user = useSelector((state) => state.user);
   const { info } = user;
 
@@ -16,6 +17,7 @@ export function AccountPanel(props) {
 
   const logout = () => {
     dispatch(actions.logout());
+    history.push(RouteEnum.Home);
   };
 
   const LoginLogout = !user.loggedIn ? (

@@ -16,7 +16,7 @@ function TourDetailPage() {
 
   const tour = useSelector((state) => state.fetchData.tour);
   const user = useSelector((state) => state.user);
-  const { loggedIn } = user.info;
+  const { loggedIn } = user;
 
   const errors = useSelector((state) => state.errors);
   const { tourLoading, tourErrMsg } = errors;
