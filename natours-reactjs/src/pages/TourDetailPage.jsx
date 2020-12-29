@@ -8,12 +8,15 @@ import SectionHeader from 'components/Detail/SectionHeader';
 import SectionPictures from 'components/Detail/SectionPicture';
 import GoogleMap from 'components/map/GoogleMap';
 import Review from 'components/Review';
+import Cta from 'components/Detail/Cta';
 
 function TourDetailPage() {
   const { id } = useParams();
   const dispatch = useDispatch();
 
   const tour = useSelector((state) => state.fetchData.tour);
+  const user = useSelector((state) => state.user);
+  const { loggedIn } = user.info;
 
   const errors = useSelector((state) => state.errors);
   const { tourLoading, tourErrMsg } = errors;
@@ -36,6 +39,7 @@ function TourDetailPage() {
           <SectionPictures images={tour.images} />
           <GoogleMap locations={tour.locations} />
           <Review reviews={tour.reviews} />
+          <Cta loggedIn={loggedIn} tour={tour} />
         </>
       )}
     </>
