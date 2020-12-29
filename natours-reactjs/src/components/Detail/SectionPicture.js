@@ -9,7 +9,7 @@ function SectionPictures(props) {
       <div className="picture-box">
         <img
           className={`picture-box__img picture-box__img--${idx}`}
-          src={Images.RANDOM + idx}
+          src={Images.TOURS_IMG + im}
           alt={`The Park Camper Tour ${idx}`}
         />
       </div>

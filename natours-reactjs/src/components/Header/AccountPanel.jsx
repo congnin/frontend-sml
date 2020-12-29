@@ -8,10 +8,11 @@ import * as actions from '../../app/actions';
 export function AccountPanel(props) {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
+  const { info } = user;
 
   useEffect(() => {
     dispatch(actions.authCheckState());
-  }, [dispatch])
+  }, [dispatch]);
 
   const logout = () => {
     dispatch(actions.logout());
@@ -22,19 +23,25 @@ export function AccountPanel(props) {
       Login
     </Link>
   ) : (
-      <Link className="nav__el nav__el--logout" onClick={logout}>Logout</Link>
-    );
+    <Link className="nav__el nav__el--logout" onClick={logout}>
+      Logout
+    </Link>
+  );
 
   const RegisterName = !user.loggedIn ? (
     <Link className="nav__el nav__el--cta" to={RouteEnum.SignUp}>
       Sign up
     </Link>
   ) : (
-      <Link className="nav__el" to={RouteEnum.Me}>
-        <img className="nav__user-img" src={Images.RANDOM} alt={`${user.name}`} />
-        <span>{`${user.name}`}</span>
-      </Link>
-    );
+    <Link className="nav__el" to={RouteEnum.Me}>
+      <img
+        className="nav__user-img"
+        src={Images.USERS_IMG + info.photo}
+        alt={`${info.name}`}
+      />
+      <span>{`${info.name}`}</span>
+    </Link>
+  );
 
   return (
     <nav className="nav nav--user">

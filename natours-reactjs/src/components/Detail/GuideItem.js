@@ -18,7 +18,11 @@ function GuideItem(props) {
 
   return (
     <div className="overview-box__detail">
-      <img src={Images.RANDOM} alt={name} className="overview-box__img" />
+      <img
+        src={Images.USERS_IMG + photo}
+        alt={name}
+        className="overview-box__img"
+      />
       <span className="overview-box__label">{displayRole}</span>
       <span className="overview-box__text">{name}</span>
     </div>

@@ -16,11 +16,7 @@ TourCard.defaultProps = {
 };
 
 function TourCard(props) {
-  const { tour, onTourClick } = props;
-
-  const handleDetailClick = () => {
-    if (onTourClick) onTourClick(tour);
-  };
+  const { tour } = props;
 
   return (
     <div className="card">
@@ -28,7 +24,7 @@ function TourCard(props) {
         <div className="card__picture">
           <div className="card__picture-overlay">&nbsp;</div>
           <img
-            src="https://source.unsplash.com/random/"
+            src={Images.TOURS_IMG + tour.imageCover}
             alt={tour.name}
             className="card__picture-img"
           />

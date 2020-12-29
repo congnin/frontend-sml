@@ -13,6 +13,8 @@ const Images = {
   USER: iconSprite + '#icon-user',
   STAR: iconSprite + '#icon-star',
   RANDOM: 'https://source.unsplash.com/random/',
+  TOURS_IMG: 'https://serene-eyrie-61310.herokuapp.com/img/tours/',
+  USERS_IMG: 'https://serene-eyrie-61310.herokuapp.com/img/users/',
 };
 
 export default Images;
