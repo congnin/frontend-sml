@@ -1,6 +1,7 @@
 import { auth } from 'app/actions';
 import LoginForm from 'components/Form/LoginForm';
 import Loader from 'components/Loader';
+import RouteEnum from 'constants/RouteEnum';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -16,7 +17,7 @@ function LoginPage(props) {
   const handleSubmit = (values) => {
     dispatch(
       auth(values.email, values.password, () => {
-        history.push('/');
+        history.push(RouteEnum.Home);
       })
     );
   };

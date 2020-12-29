@@ -6,6 +6,7 @@ import Footer from 'components/Footer';
 import Header from 'components/Header';
 
 import RouteEnum from 'constants/RouteEnum';
+import LoggedInRoute from 'routing/LoggedInRoute';
 
 const AllToursPage = React.lazy(() => {
   return import('pages/AllToursPage');
@@ -26,7 +27,7 @@ function App(props) {
           <Redirect exact from="/" to={RouteEnum.Home} />
 
           <Route path={RouteEnum.Home} exact component={AllToursPage} />
-          <Route path={RouteEnum.Login} exact component={LoginPage} />
+          <LoggedInRoute path={RouteEnum.Login} exact component={LoginPage} />
           <Route path={RouteEnum.Tour} component={TourDetailPage} />
         </Switch>
       </Suspense>
