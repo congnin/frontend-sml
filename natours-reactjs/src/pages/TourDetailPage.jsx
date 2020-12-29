@@ -7,6 +7,7 @@ import SectionDescription from '../components/Detail/SectionDescription';
 import SectionHeader from 'components/Detail/SectionHeader';
 import SectionPictures from 'components/Detail/SectionPicture';
 import GoogleMap from 'components/map/GoogleMap';
+import Review from 'components/Review';
 
 function TourDetailPage() {
   const { id } = useParams();
@@ -34,6 +35,7 @@ function TourDetailPage() {
           <SectionDescription tour={tour} />
           <SectionPictures images={tour.images} />
           <GoogleMap locations={tour.locations} />
+          <Review reviews={tour.reviews} />
         </>
       )}
     </>

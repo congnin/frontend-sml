@@ -55,8 +55,8 @@ const GoogleMap = ({ locations }) => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <section class="section-map">
-      <div className="map-container" ref={mapContainerRef}></div>
+    <section className="section-map">
+      <div id="map" ref={mapContainerRef}></div>
     </section>
   );
 };

@@ -65,7 +65,6 @@ export const fetchTour = (id) => async (dispatch) => {
   dispatch(fetchTourInit());
   try {
     const response = await tourApi.get(id);
-    console.log(response);
     dispatch(fetchTourSuccess(response.data.data));
   } catch (e) {
     dispatch(fetchTourFail(e.message));
