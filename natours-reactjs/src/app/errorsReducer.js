@@ -8,6 +8,9 @@ import {
   FETCH_TOUR_INIT,
   FETCH_TOUR_SUCCESS,
   FETCH_TOUR_FAILED,
+  UPDATE_ME_INIT,
+  UPDATE_ME_SUCCESS,
+  UPDATE_ME_FAIL,
 } from './actionTypes';
 
 import { updateObject } from '../utils/index';
@@ -19,6 +22,8 @@ const initialState = {
   toursErrMsg: '',
   tourLoading: false,
   tourErrMsg: '',
+  updateMeLoading: false,
+  updateMeErrMsg: '',
 };
 
 export default function errors(state = initialState, action) {
@@ -71,6 +76,22 @@ export default function errors(state = initialState, action) {
       return updateObject(state, {
         tourLoading: false,
         tourErrMsg: action.payload,
+      });
+
+    case UPDATE_ME_INIT:
+      return updateObject(state, {
+        updateMeLoading: true,
+        updateMeErrMsg: '',
+      });
+    case UPDATE_ME_SUCCESS:
+      return updateObject(state, {
+        updateMeLoading: false,
+        updateMeErrMsg: '',
+      });
+    case UPDATE_ME_FAIL:
+      return updateObject(state, {
+        updateMeLoading: false,
+        updateMeErrMsg: action.payload,
       });
     default:
       return state;

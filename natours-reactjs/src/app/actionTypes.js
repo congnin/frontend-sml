@@ -10,3 +10,7 @@ export const AUTH_INIT = 'AUTH_INIT';
 export const AUTH_SUCCESS = 'AUTH_SUCCESS';
 export const AUTH_FAIL = 'AUTH_FAIL';
 export const AUTH_LOGOUT = 'AUTH_LOGOUT';
+
+export const UPDATE_ME_INIT = 'UPDATE_ME_INIT';
+export const UPDATE_ME_SUCCESS = 'UPDATE_ME_SUCCESS';
+export const UPDATE_ME_FAIL = 'UPDATE_ME_FAIL';

@@ -4,6 +4,7 @@ import RouteEnum from 'constants/RouteEnum';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import * as actions from '../../app/actions';
+import { getFirstName } from 'utils';
 
 export function AccountPanel(props) {
   const dispatch = useDispatch();
@@ -41,7 +42,7 @@ export function AccountPanel(props) {
         src={Images.USERS_IMG + info.photo}
         alt={`${info.name}`}
       />
-      <span>{`${info.name}`}</span>
+      <span>{getFirstName(info.name)}</span>
     </Link>
   );
 

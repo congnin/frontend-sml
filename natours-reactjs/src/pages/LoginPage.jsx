@@ -12,7 +12,7 @@ function LoginPage(props) {
   const errors = useSelector((state) => state.errors);
   const { authLoading, authErrMsg } = errors;
 
-  const initialValues = { email: 'test@jonas.io', password: '' };
+  const initialValues = { email: 'congnc1990@gmail.com', password: '' };
 
   const handleSubmit = (values) => {
     dispatch(
@@ -25,14 +25,14 @@ function LoginPage(props) {
   return (
     <main className="main">
       {authErrMsg && <h1>{authErrMsg}</h1>}
-      {authLoading ? (
-        <Loader />
-      ) : (
-        <div className="login-form">
-          <h2 className="heading-secondary ma-bt-lg">Log into your account</h2>
-          <LoginForm initialValues={initialValues} onSubmit={handleSubmit} />
-        </div>
-      )}
+      <div className="login-form">
+        <h2 className="heading-secondary ma-bt-lg">Log into your account</h2>
+        <LoginForm
+          initialValues={initialValues}
+          isSubmit={authLoading}
+          onSubmit={handleSubmit}
+        />
+      </div>
     </main>
   );
 }

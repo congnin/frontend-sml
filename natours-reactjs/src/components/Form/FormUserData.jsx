@@ -1,28 +1,26 @@
+import FileField from 'custom-fields/FileField';
 import InputField from 'custom-fields/InputField';
 import { FastField, Form, Formik } from 'formik';
 import PropTypes from 'prop-types';
 import React from 'react';
-
-import ClipLoader from 'react-spinners/ClipLoader';
+import Loader from 'react-spinners/ClipLoader';
 import * as Yup from 'yup';
 
-LoginForm.propTypes = {
+FormUserData.propTypes = {
   onSubmit: PropTypes.func,
 };
 
-LoginForm.defaultProps = {
+FormUserData.defaultProps = {
   onSubmit: null,
 };
 
-function LoginForm(props) {
-  const { initialValues, isSubmit } = props;
+function FormUserData(props) {
+  const { initialValues, isSubmit, error } = props;
 
   const validationSchema = Yup.object().shape({
-    email: Yup.string().required('This field is required.').email(),
+    name: Yup.string().required('This field is required.'),
 
-    password: Yup.string()
-      .required('This field is required.')
-      .min(8, 'Password is too short - should be 8 chars minimum.'),
+    email: Yup.string().required('This field is required.').email(),
   });
 
   // npm i --save react-select
@@ -37,29 +35,29 @@ function LoginForm(props) {
         const { values, errors, touched, isSubmitting } = formikProps;
 
         return (
-          <Form>
+          <Form className="form form-user-data">
+            <FastField
+              name="name"
+              component={InputField}
+              label="Name"
+              type="text"
+            />
+
             <FastField
               name="email"
               component={InputField}
               label="Email address"
-              placeholder="you@example.com"
             />
 
             <FastField
-              name="password"
-              component={InputField}
-              label="Password"
-              type="password"
-              placeholder="••••••••"
+              name="photo"
+              component={FileField}
+              label="Choose new photo"
             />
 
             <div className="form__group">
-              <button
-                className="btn btn--green"
-                type="submit"
-                disable={isSubmit}
-              >
-                {isSubmit && <ClipLoader color={'#55c57a'} />} Login
+              <button className="btn btn--small btn--green" type="submit">
+                {isSubmit && <Loader />} Save settings {error}
               </button>
             </div>
           </Form>
@@ -69,4 +67,4 @@ function LoginForm(props) {
   );
 }
 
-export default LoginForm;
+export default FormUserData;

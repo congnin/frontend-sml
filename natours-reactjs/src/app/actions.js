@@ -12,7 +12,40 @@ import {
   FETCH_TOUR_INIT,
   FETCH_TOUR_SUCCESS,
   FETCH_TOUR_FAILED,
+  UPDATE_ME_INIT,
+  UPDATE_ME_SUCCESS,
+  UPDATE_ME_FAIL,
 } from './actionTypes';
+
+function getErrorMessage(err) {
+  let errMsg;
+  if (err.response && err.response.data && err.response.data.message) {
+    errMsg = err.response.data.message;
+  } else {
+    errMsg = 'Something went wrong';
+  }
+  return errMsg;
+}
+
+export const updateMeInit = () => {
+  return {
+    type: UPDATE_ME_INIT,
+  };
+};
+
+export const updateMeSuccess = (data) => {
+  return {
+    type: UPDATE_ME_SUCCESS,
+    payload: data,
+  };
+};
+
+export const updateMeFail = (error) => {
+  return {
+    type: UPDATE_ME_FAIL,
+    payload: error,
+  };
+};
 
 export const authInit = () => {
   return {
@@ -61,23 +94,43 @@ export const fetchTourFail = (error) => {
   };
 };
 
+export const fetchToursInit = () => {
+  return {
+    type: FETCH_TOURS_INIT,
+  };
+};
+
+export const fetchToursSuccess = (data) => {
+  return {
+    type: FETCH_TOURS_SUCCESS,
+    payload: data,
+  };
+};
+
+export const fetchToursFail = (error) => {
+  return {
+    type: FETCH_TOURS_FAILED,
+    payload: error,
+  };
+};
+
 export const fetchTour = (id) => async (dispatch) => {
   dispatch(fetchTourInit());
   try {
     const response = await tourApi.get(id);
     dispatch(fetchTourSuccess(response.data.data));
   } catch (e) {
-    dispatch(fetchTourFail(e.message));
+    dispatch(fetchTourFail(getErrorMessage(e)));
   }
 };
 
 export const fetchTours = () => async (dispatch) => {
-  dispatch({ type: FETCH_TOURS_INIT });
+  dispatch(fetchTourInit());
   try {
     const response = await tourApi.getAll();
-    dispatch({ type: FETCH_TOURS_SUCCESS, payload: response.data.data });
+    dispatch(fetchToursSuccess(response.data.data));
   } catch (e) {
-    dispatch({ type: FETCH_TOURS_FAILED, payload: e.message });
+    dispatch(fetchToursFail(getErrorMessage(e)));
   }
 };
 
@@ -89,15 +142,11 @@ export const auth = (email, password, callback) => async (dispatch) => {
       password: password,
     };
     const response = await userApi.signIn(authData);
-    if (response.status === 'success') {
-      localStorageData.saveState(response);
-      dispatch(authSuccess(response));
-      callback();
-    } else {
-      dispatch(authFail(response.message));
-    }
+    localStorageData.saveState(response);
+    dispatch(authSuccess(response));
+    callback();
   } catch (e) {
-    dispatch(authFail('Something went wrong'));
+    dispatch(authFail(getErrorMessage(e)));
   }
 };
 
@@ -109,6 +158,22 @@ export const authCheckState = () => {
     } else {
       const localState = localStorageData.loadState();
       dispatch(authSuccess(localState));
+    }
+  };
+};
+
+export const updateMe = (name, email) => {
+  return async (dispatch) => {
+    dispatch(updateMeInit());
+    const me = {
+      name: name,
+      email: email,
+    };
+    try {
+      const response = await userApi.updateMe(me);
+      dispatch(updateMeSuccess(response.data.user));
+    } catch (e) {
+      dispatch(updateMeFail(getErrorMessage(e)));
     }
   };
 };

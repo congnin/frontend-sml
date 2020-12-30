@@ -17,6 +17,13 @@ const LoginPage = React.lazy(() => {
 const TourDetailPage = React.lazy(() => {
   return import('pages/TourDetailPage');
 });
+const AccountPage = React.lazy(() => {
+  return import('pages/private/AccountPage');
+});
+
+const NotFound = React.lazy(() => {
+  return import('pages/NotFound');
+});
 
 function App(props) {
   return (
@@ -24,11 +31,13 @@ function App(props) {
       <Header />
       <Suspense fallback={<div>Loading ...</div>}>
         <Switch>
-          <Redirect exact from="/" to={RouteEnum.Home} />
-
           <Route path={RouteEnum.Home} exact component={AllToursPage} />
           <LoggedInRoute path={RouteEnum.Login} exact component={LoginPage} />
           <Route path={RouteEnum.Tour} component={TourDetailPage} />
+
+          <Route path={RouteEnum.Me} component={AccountPage} />
+          <Route path={RouteEnum.NotFound} component={NotFound} />
+          <Redirect to={RouteEnum.NotFound} />
         </Switch>
       </Suspense>
       <Footer />

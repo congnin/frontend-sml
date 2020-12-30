@@ -8,7 +8,17 @@ const userApi = {
 
   signUp: (formProps) => {
     const url = '/users/signup';
-    return axiosClient.post(url, { formProps });
+    return axiosClient.post(url, formProps);
+  },
+
+  updateMe: (formProps) => {
+    const url = '/users/updateMe';
+    return axiosClient.patch(url, formProps);
+  },
+
+  getMe: () => {
+    const url = '/users/me';
+    return axiosClient.get(url);
   },
 };
 

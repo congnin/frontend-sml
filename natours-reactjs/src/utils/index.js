@@ -1,7 +1,7 @@
 export const updateObject = (oldObject, updatedProperties) => {
   return {
     ...oldObject,
-    ...updatedProperties
+    ...updatedProperties,
   };
 };
 
@@ -34,4 +34,12 @@ export function getRandomIntInclusive(min, max) {
 
 export function getRandom100() {
   return getRandomIntInclusive(1, 100);
+}
+
+export function getFirstName(fullName) {
+  return fullName.split(' ').slice(0, -1).join(' ');
+}
+
+export function getLastName(fullName) {
+  return fullName.split(' ').slice(-1).join(' ');
 }
