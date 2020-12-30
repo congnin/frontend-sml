@@ -5,7 +5,7 @@ import ClipLoader from 'react-spinners/ClipLoader';
 function Loader() {
   return (
     <div className="container">
-      <ClipLoader size={150} color={'#55c57a'} />
+      <ClipLoader size={75} color={'#55c57a'} />
     </div>
   );
 }

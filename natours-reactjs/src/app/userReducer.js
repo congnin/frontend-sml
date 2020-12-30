@@ -1,5 +1,6 @@
 import { AUTH_SUCCESS, AUTH_LOGOUT } from './actionTypes';
 import { updateObject } from '../utils';
+import { ADMIN } from 'constants/images';
 
 const initialState = {
   token: '',
@@ -9,21 +10,23 @@ const initialState = {
 };
 
 const authSuccess = (state, action) => {
+  const isAdmin = action.payload.data.user.role === ADMIN;
   return updateObject(state, {
     token: action.payload.token,
     info: action.payload.data.user,
-    loggedIn: true
-  })
-}
+    loggedIn: true,
+    isAdmin: isAdmin,
+  });
+};
 
 const authLogout = (state, action) => {
   return updateObject(state, {
     token: '',
     info: null,
     loggedIn: false,
-    isAdmin: false
-  })
-}
+    isAdmin: false,
+  });
+};
 
 export default function user(state = initialState, action) {
   switch (action.type) {

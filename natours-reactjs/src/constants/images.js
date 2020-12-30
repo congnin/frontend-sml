@@ -16,5 +16,6 @@ const Images = {
   TOURS_IMG: 'https://serene-eyrie-61310.herokuapp.com/img/tours/',
   USERS_IMG: 'https://serene-eyrie-61310.herokuapp.com/img/users/',
 };
-
 export default Images;
+
+export const ADMIN = 'admin';
