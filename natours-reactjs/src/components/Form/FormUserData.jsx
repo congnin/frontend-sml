@@ -1,4 +1,3 @@
-import FileField from 'custom-fields/FileField';
 import InputField from 'custom-fields/InputField';
 import { FastField, Form, Formik } from 'formik';
 import PropTypes from 'prop-types';
@@ -47,12 +46,6 @@ function FormUserData(props) {
               name="email"
               component={InputField}
               label="Email address"
-            />
-
-            <FastField
-              name="photo"
-              component={FileField}
-              label="Choose new photo"
             />
 
             <div className="form__group">

@@ -11,6 +11,9 @@ import {
   UPDATE_ME_INIT,
   UPDATE_ME_SUCCESS,
   UPDATE_ME_FAIL,
+  UPDATE_MY_PASS_INIT,
+  UPDATE_MY_PASS_SUCCESS,
+  UPDATE_MY_PASS_FAIL,
 } from './actionTypes';
 
 import { updateObject } from '../utils/index';
@@ -24,6 +27,8 @@ const initialState = {
   tourErrMsg: '',
   updateMeLoading: false,
   updateMeErrMsg: '',
+  updateMyPassLoading: false,
+  updateMyPassErrMsg: '',
 };
 
 export default function errors(state = initialState, action) {
@@ -92,6 +97,22 @@ export default function errors(state = initialState, action) {
       return updateObject(state, {
         updateMeLoading: false,
         updateMeErrMsg: action.payload,
+      });
+
+    case UPDATE_MY_PASS_INIT:
+      return updateObject(state, {
+        updateMyPassLoading: true,
+        updateMyPassErrMsg: '',
+      });
+    case UPDATE_MY_PASS_SUCCESS:
+      return updateObject(state, {
+        updateMyPassLoading: false,
+        updateMyPassErrMsg: '',
+      });
+    case UPDATE_MY_PASS_FAIL:
+      return updateObject(state, {
+        updateMyPassLoading: false,
+        updateMyPassErrMsg: action.payload,
       });
     default:
       return state;

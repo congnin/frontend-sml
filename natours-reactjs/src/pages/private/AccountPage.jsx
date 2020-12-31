@@ -3,22 +3,31 @@ import RouteEnum from 'constants/RouteEnum';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { PrivatePage } from './PrivatePage';
-import { updateMe } from 'app/actions';
+import { updateMe, updateMyPassword } from 'app/actions';
+import FormChangePassword from 'components/Form/FormChangePassword';
 
 function AccountPage(props) {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const errors = useSelector((state) => state.errors);
-  const { updateMeLoading, updateMeErrMsg } = errors;
+  const {
+    updateMeLoading,
+    updateMeErrMsg,
+    updateMyPassLoading,
+    updateMyPassErrMsg,
+  } = errors;
   const { isAdmin } = user;
   const initialValues = {
     name: user.info.name,
     email: user.info.email,
-    photo: user.info.photo,
   };
 
   const handleSubmitUserData = (values) => {
     dispatch(updateMe(values.name, values.email));
+  };
+
+  const handleSubmitNewPasswordData = (values) => {
+    dispatch(updateMyPassword(values.current, values.new, values.confirm));
   };
 
   return (
@@ -30,6 +39,12 @@ function AccountPage(props) {
           isSubmit={updateMeLoading}
           error={updateMeErrMsg}
           onSubmit={handleSubmitUserData}
+        />
+        <div className="line">&nbsp;</div>
+        <FormChangePassword
+          isSubmit={updateMyPassLoading}
+          error={updateMyPassErrMsg}
+          onSubmit={handleSubmitNewPasswordData}
         />
       </div>
     </PrivatePage>

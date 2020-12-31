@@ -15,6 +15,9 @@ import {
   UPDATE_ME_INIT,
   UPDATE_ME_SUCCESS,
   UPDATE_ME_FAIL,
+  UPDATE_MY_PASS_INIT,
+  UPDATE_MY_PASS_SUCCESS,
+  UPDATE_MY_PASS_FAIL,
 } from './actionTypes';
 
 function getErrorMessage(err) {
@@ -26,6 +29,26 @@ function getErrorMessage(err) {
   }
   return errMsg;
 }
+
+export const updateMyPassInit = () => {
+  return {
+    type: UPDATE_MY_PASS_INIT,
+  };
+};
+
+export const updateMyPassSuccess = (data) => {
+  return {
+    type: UPDATE_MY_PASS_SUCCESS,
+    payload: data,
+  };
+};
+
+export const updateMyPassFail = (error) => {
+  return {
+    type: UPDATE_MY_PASS_FAIL,
+    payload: error,
+  };
+};
 
 export const updateMeInit = () => {
   return {
@@ -174,6 +197,23 @@ export const updateMe = (name, email) => {
       dispatch(updateMeSuccess(response.data.user));
     } catch (e) {
       dispatch(updateMeFail(getErrorMessage(e)));
+    }
+  };
+};
+
+export const updateMyPassword = (current, newPass, confirmPass) => {
+  return async (dispatch) => {
+    dispatch(updateMyPassInit());
+    const myPassword = {
+      passwordCurrent: current,
+      password: newPass,
+      passwordConfirm: confirmPass,
+    };
+    try {
+      const response = await userApi.updateMyPassword(myPassword);
+      dispatch(updateMyPassSuccess(response.data.user));
+    } catch (e) {
+      dispatch(updateMyPassFail(getErrorMessage(e)));
     }
   };
 };
