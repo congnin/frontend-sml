@@ -49,7 +49,7 @@ app.use((error, req, res, next) => {
 
 mongoose
   .connect(
-    `mongodb+srv://mflixAppUser:mflixAppPwd@cluster0.yvsd9.mongodb.net/mern?retryWrites=true&w=majority`
+    `mongodb+srv://mernAppUser:mernAppPwd@cluster0.yvsd9.mongodb.net/mern?retryWrites=true&w=majority`
   )
   .then(() => {
     app.listen(5000);
