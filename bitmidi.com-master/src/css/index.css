@@ -1,0 +1,176 @@
+/**
+ * Dark mode
+ */
+
+:root {
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  img:not([src*=".svg"]) {
+    filter: grayscale(15%);
+  }
+}
+
+/**
+ * Single-purpose classes
+ */
+
+/* Padding for the iPhone X notch */
+.ph3-safe {
+  /*
+   * Remove fallback declarations and @supports once Chrome/Firefox supports max()
+   * See: https://caniuse.com/#feat=css-math-functions
+   */
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@supports(padding: max(0px)) {
+  .ph3-safe {
+    padding-left: max(1rem, env(safe-area-inset-left, 0));
+    padding-right: max(1rem, env(safe-area-inset-right, 0));
+  }
+}
+
+.shadow-6 {
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+.grow-subtle {
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+
+.grow-subtle:hover {
+  transform: scale(1.02);
+}
+
+.grow-subtle:focus {
+  transform: scale(1.05);
+}
+
+.break-word {
+  word-wrap: break-word;
+}
+
+/**
+ * Animations (adapted from animate.css)
+ */
+
+.animate-fade-in,
+.animate-pulse {
+  animation-fill-mode: both;
+}
+
+.animate--normal {
+  animation-duration: 0.5s;
+}
+
+.animate--fast {
+  animation-duration: 0.25s;
+}
+
+.animate--delay {
+  animation-delay: 0.25s;
+}
+
+.animate--infinite {
+  animation-iteration-count: infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation-name: fadeIn;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.animate-pulse {
+  animation-name: pulse;
+}
+
+/**
+ * Rainbow animation (inspired by https://codepen.io/nohoid/pen/kIfto)
+ */
+
+@keyframes bgRainbow {
+  0% {
+    background-position: 0% 0%
+  }
+
+  100% {
+    background-position: 200% 0%
+  }
+}
+
+.animate-bg-rainbow {
+  animation: 4s linear 0.25s infinite bgRainbow;
+
+  background: linear-gradient(
+    to right,
+    #ff4136, #ff6300, #ffb700, gold, #19a974, #357edd, #a463f2, #ff80cc,
+    #ff4136
+  );
+  background-size: 200% 200%;
+}
+
+/**
+ * Page-specific styles
+ */
+
+.midi-image {
+  opacity: 0.85;
+  transition: all ease-out .15s;
+}
+
+.midi-image:hover {
+  opacity: 1;
+}
+
+/**
+ * Ad-specific styles
+ */
+
+/* sometimes the sidebar ad causes the page to have horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
+/*! purgecss start ignore */
+
+/* center oversized ads when they overflow */
+.newor-ad-overflow-fix iframe {
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+/* hide cookie notice */
+[class*='app_gdpr'] {
+  display: none;
+}
+
+/*! purgecss end ignore */
