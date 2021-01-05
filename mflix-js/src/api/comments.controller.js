@@ -94,10 +94,11 @@ export default class CommentsController {
 
       const movieId = req.body.movie_id
 
-      const { comments } = await MoviesDAO.getMovieByID(movieId)
+      const comments = await MoviesDAO.getMovieByID(movieId)
       res.json({ comments })
     } catch (e) {
-      res.status(500).json({ e })
+      console.error(e)
+      res.status(500).json({ message: e.message })
     }
   }
 
