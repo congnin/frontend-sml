@@ -72,7 +72,7 @@ git subtree push --prefix path/to/subdirectory heroku master
 For example, if the subdirectory I want to deploy my-app is in the root my-repo, then I run:
 
 ```
-git subtree push --prefix my-repo/my-app heroku master
+git subtree push --prefix my-app heroku master
 ```
 
 ### And then...
