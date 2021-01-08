@@ -27,7 +27,9 @@ function AccountPage(props) {
   };
 
   const handleSubmitNewPasswordData = (values) => {
-    dispatch(updateMyPassword(values.current, values.new, values.confirm));
+    dispatch(
+      updateMyPassword(values.currentPass, values.newPass, values.confirmPass)
+    );
   };
 
   return (
@@ -40,7 +42,10 @@ function AccountPage(props) {
           error={updateMeErrMsg}
           onSubmit={handleSubmitUserData}
         />
-        <div className="line">&nbsp;</div>
+      </div>
+      <div className="line">&nbsp;</div>
+      <div className="user-view__form-container">
+        <h2 className="heading-secondary ma-bt-md">Password change</h2>
         <FormChangePassword
           isSubmit={updateMyPassLoading}
           error={updateMyPassErrMsg}

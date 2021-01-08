@@ -48,7 +48,7 @@ function FormUserData(props) {
               label="Email address"
             />
 
-            <div className="form__group">
+            <div className="form__group right">
               <button className="btn btn--small btn--green" type="submit">
                 {isSubmit && <Loader />} Save settings {error}
               </button>

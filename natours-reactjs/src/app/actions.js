@@ -194,6 +194,7 @@ export const updateMe = (name, email) => {
     };
     try {
       const response = await userApi.updateMe(me);
+      localStorageData.saveState(response);
       dispatch(updateMeSuccess(response.data.user));
     } catch (e) {
       dispatch(updateMeFail(getErrorMessage(e)));
@@ -201,11 +202,11 @@ export const updateMe = (name, email) => {
   };
 };
 
-export const updateMyPassword = (current, newPass, confirmPass) => {
+export const updateMyPassword = (currentPass, newPass, confirmPass) => {
   return async (dispatch) => {
     dispatch(updateMyPassInit());
     const myPassword = {
-      passwordCurrent: current,
+      passwordCurrent: currentPass,
       password: newPass,
       passwordConfirm: confirmPass,
     };
