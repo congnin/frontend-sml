@@ -1,10 +1,10 @@
 import { auth } from 'app/actions';
 import LoginForm from 'components/Form/LoginForm';
-import Loader from 'components/Loader';
 import RouteEnum from 'constants/RouteEnum';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 
 function LoginPage(props) {
   const dispatch = useDispatch();
@@ -13,6 +13,12 @@ function LoginPage(props) {
   const { authLoading, authErrMsg } = errors;
 
   const initialValues = { email: 'congnc1990@gmail.com', password: '' };
+
+  useEffect(() => {
+    if (authErrMsg) {
+      toast.error(authErrMsg);
+    }
+  });
 
   const handleSubmit = (values) => {
     dispatch(
@@ -24,7 +30,7 @@ function LoginPage(props) {
 
   return (
     <main className="main">
-      {authErrMsg && <h1>{authErrMsg}</h1>}
+      <ToastContainer />
       <div className="login-form">
         <h2 className="heading-secondary ma-bt-lg">Log into your account</h2>
         <LoginForm
