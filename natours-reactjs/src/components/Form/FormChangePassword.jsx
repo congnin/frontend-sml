@@ -16,30 +16,28 @@ FormChangePassword.defaultProps = {
 function FormChangePassword(props) {
   const { initialValues, isSubmit, error } = props;
 
-  // const validationSchema = Yup.object().shape({
-  //   currentPass: Yup.string().required('This field is required.'),
-
-  //   newPass: Yup.string()
-  //     .required('This field is required.')
-  //     .min(8, 'Password is too short - should be 8 chars minimum.'),
-
-  //   confirmPass: Yup.string()
-  //     .oneOf([Yup.ref('newPass'), null], "Passwords don't match")
-  //     .required('Confirm Password is required'),
-  // });
+  const validationSchema = Yup.object().shape({
+    currentPass: Yup.string().required('This field is required.'),
+    newPass: Yup.string()
+      .required('This field is required.')
+      .min(8, 'Password is too short - should be 8 chars minimum.'),
+    confirmPass: Yup.string()
+      .oneOf([Yup.ref('newPass'), null], "Passwords don't match")
+      .required('Confirm Password is required'),
+  });
 
   return (
     <Formik
-      initialValues={initialValues}
-      // validationSchema={validationSchema}
+      validationSchema={validationSchema}
       onSubmit={props.onSubmit}
+      initialValues={initialValues}
     >
       {(formikProps) => {
         // do something here ...
         const { values, errors, touched, isSubmitting, isValid } = formikProps;
 
         return (
-          <Form className="form form-user-password">
+          <Form className="form form-user-password" loading={isSubmitting}>
             <FastField
               name="currentPass"
               label="Current password"

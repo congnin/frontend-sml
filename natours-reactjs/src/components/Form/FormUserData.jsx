@@ -14,7 +14,7 @@ FormUserData.defaultProps = {
 };
 
 function FormUserData(props) {
-  const { initialValues, isSubmit, error } = props;
+  const { initialValues, isSubmit } = props;
 
   const validationSchema = Yup.object().shape({
     name: Yup.string().required('This field is required.'),
@@ -50,7 +50,7 @@ function FormUserData(props) {
 
             <div className="form__group right">
               <button className="btn btn--small btn--green" type="submit">
-                {isSubmit && <Loader />} Save settings {error}
+                {isSubmit && <Loader />} Save settings
               </button>
             </div>
           </Form>

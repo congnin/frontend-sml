@@ -1,10 +1,11 @@
 import FormUserData from 'components/Form/FormUserData';
 import RouteEnum from 'constants/RouteEnum';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { PrivatePage } from './PrivatePage';
 import { updateMe, updateMyPassword } from 'app/actions';
 import FormChangePassword from 'components/Form/FormChangePassword';
+import { ToastContainer, toast } from 'react-toastify';
 
 function AccountPage(props) {
   const dispatch = useDispatch();
@@ -22,6 +23,20 @@ function AccountPage(props) {
     email: user.info.email,
   };
 
+  const passwordInitialValues = {
+    currentPass: '',
+    newPass: '',
+    confirmPass: '',
+  };
+
+  useEffect(() => {
+    if (updateMyPassErrMsg) {
+      toast.error(updateMyPassErrMsg);
+    } else if (updateMeErrMsg) {
+      toast.error(updateMeErrMsg);
+    }
+  });
+
   const handleSubmitUserData = (values) => {
     dispatch(updateMe(values.name, values.email));
   };
@@ -33,26 +48,30 @@ function AccountPage(props) {
   };
 
   return (
-    <PrivatePage isAdmin={isAdmin} activeNav={RouteEnum.Settings}>
-      <div className="user-view__form-container">
-        <h2 className="heading-secondary ma-bt-md">Your account settings</h2>
-        <FormUserData
-          initialValues={initialValues}
-          isSubmit={updateMeLoading}
-          error={updateMeErrMsg}
-          onSubmit={handleSubmitUserData}
-        />
-      </div>
-      <div className="line">&nbsp;</div>
-      <div className="user-view__form-container">
-        <h2 className="heading-secondary ma-bt-md">Password change</h2>
-        <FormChangePassword
-          isSubmit={updateMyPassLoading}
-          error={updateMyPassErrMsg}
-          onSubmit={handleSubmitNewPasswordData}
-        />
-      </div>
-    </PrivatePage>
+    <>
+      <ToastContainer />
+      <PrivatePage isAdmin={isAdmin} activeNav={RouteEnum.Settings}>
+        <div className="user-view__form-container">
+          <h2 className="heading-secondary ma-bt-md">Your account settings</h2>
+          <FormUserData
+            initialValues={initialValues}
+            isSubmit={updateMeLoading}
+            error={updateMeErrMsg}
+            onSubmit={handleSubmitUserData}
+          />
+        </div>
+        <div className="line">&nbsp;</div>
+        <div className="user-view__form-container">
+          <h2 className="heading-secondary ma-bt-md">Password change</h2>
+          <FormChangePassword
+            initialValues={passwordInitialValues}
+            isSubmit={updateMyPassLoading}
+            error={updateMyPassErrMsg}
+            onSubmit={handleSubmitNewPasswordData}
+          />
+        </div>
+      </PrivatePage>
+    </>
   );
 }
 
