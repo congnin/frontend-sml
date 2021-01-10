@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './NavItem.scss';
 
 export function NavItem(props) {
   const { link, text, icon, active } = props;

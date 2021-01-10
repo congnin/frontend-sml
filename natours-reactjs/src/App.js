@@ -20,6 +20,9 @@ const TourDetailPage = React.lazy(() => {
 const AccountPage = React.lazy(() => {
   return import('pages/private/AccountPage');
 });
+const UserDashboardPage = React.lazy(() => {
+  return import('pages/private/UserDashboardPage');
+});
 
 const NotFound = React.lazy(() => {
   return import('pages/NotFound');
@@ -35,7 +38,8 @@ function App(props) {
           <LoggedInRoute path={RouteEnum.Login} exact component={LoginPage} />
           <Route path={RouteEnum.Tour} component={TourDetailPage} />
 
-          <Route path={RouteEnum.Me} component={AccountPage} />
+          <Route path={RouteEnum.Settings} component={AccountPage} />
+          <Route path={RouteEnum.ManageUsers} component={UserDashboardPage} />
           <Route path={RouteEnum.NotFound} component={NotFound} />
           <Redirect to={RouteEnum.NotFound} />
         </Switch>

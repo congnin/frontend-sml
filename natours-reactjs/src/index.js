@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import './index.css';
+import './index.scss';
 import 'react-toastify/dist/ReactToastify.css';
 
 import configureStore from './app/configureStore';

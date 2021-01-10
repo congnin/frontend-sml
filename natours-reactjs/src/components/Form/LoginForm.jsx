@@ -5,6 +5,7 @@ import React from 'react';
 
 import ClipLoader from 'react-spinners/ClipLoader';
 import * as Yup from 'yup';
+import './Form.scss';
 
 LoginForm.propTypes = {
   onSubmit: PropTypes.func,
@@ -25,7 +26,6 @@ function LoginForm(props) {
       .min(8, 'Password is too short - should be 8 chars minimum.'),
   });
 
-  // npm i --save react-select
   return (
     <Formik
       initialValues={initialValues}

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TourCard from '../TourCard';
+import './TourList.scss';
 
 TourList.propTypes = {
   tours: PropTypes.array,

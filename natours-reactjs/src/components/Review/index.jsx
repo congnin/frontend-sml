@@ -1,5 +1,6 @@
 import React from 'react';
 import ReviewItem from './ReviewItem';
+import './Review.scss';
 
 function Review(props) {
   const { reviews } = props;

@@ -2,6 +2,7 @@ import { NavItem } from 'components/NavItem';
 import React from 'react';
 import RouteEnum from '../../constants/RouteEnum';
 import Images from '../../constants/images';
+import './LeftNav.scss';
 
 function LeftNav(props) {
   const { isAdmin, activeNav } = props;

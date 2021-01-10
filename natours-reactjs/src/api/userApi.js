@@ -25,6 +25,11 @@ const userApi = {
     const url = '/users/updateMyPassword';
     return axiosClient.patch(url, formProps);
   },
+
+  getAll: () => {
+    const url = '/users';
+    return axiosClient.get(url);
+  },
 };
 
 export default userApi;

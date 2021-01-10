@@ -18,6 +18,9 @@ import {
   UPDATE_MY_PASS_INIT,
   UPDATE_MY_PASS_SUCCESS,
   UPDATE_MY_PASS_FAIL,
+  FETCH_USERS_INIT,
+  FETCH_USERS_SUCCESS,
+  FETCH_USERS_FAILED,
 } from './actionTypes';
 
 function getErrorMessage(err) {
@@ -137,6 +140,26 @@ export const fetchToursFail = (error) => {
   };
 };
 
+export const fetchUsersInit = () => {
+  return {
+    type: FETCH_USERS_INIT,
+  };
+};
+
+export const fetchUsersSuccess = (data) => {
+  return {
+    type: FETCH_USERS_SUCCESS,
+    payload: data,
+  };
+};
+
+export const fetchUsersFail = (error) => {
+  return {
+    type: FETCH_USERS_FAILED,
+    payload: error,
+  };
+};
+
 export const fetchTour = (id) => async (dispatch) => {
   dispatch(fetchTourInit());
   try {
@@ -148,12 +171,22 @@ export const fetchTour = (id) => async (dispatch) => {
 };
 
 export const fetchTours = () => async (dispatch) => {
-  dispatch(fetchTourInit());
+  dispatch(fetchToursInit());
   try {
     const response = await tourApi.getAll();
     dispatch(fetchToursSuccess(response.data.data));
   } catch (e) {
     dispatch(fetchToursFail(getErrorMessage(e)));
+  }
+};
+
+export const fetchUsers = () => async (dispatch) => {
+  dispatch(fetchUsersInit());
+  try {
+    const response = await userApi.getAll();
+    dispatch(fetchUsersSuccess(response.data.data));
+  } catch (e) {
+    dispatch(fetchUsersFail(getErrorMessage(e)));
   }
 };
 

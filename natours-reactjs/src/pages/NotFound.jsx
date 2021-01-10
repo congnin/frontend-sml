@@ -1,7 +1,6 @@
 import React from 'react';
 
 function NotFound() {
-  console.log('fuck you');
   return (
     <main className="main">
       <div className="error">

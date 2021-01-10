@@ -9,7 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 function AccountPage(props) {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
+  const auth = useSelector((state) => state.auth);
   const errors = useSelector((state) => state.errors);
   const {
     updateMeLoading,
@@ -17,10 +17,10 @@ function AccountPage(props) {
     updateMyPassLoading,
     updateMyPassErrMsg,
   } = errors;
-  const { isAdmin } = user;
+  const { isAdmin } = auth;
   const initialValues = {
-    name: user.info.name,
-    email: user.info.email,
+    name: auth.info.name,
+    email: auth.info.email,
   };
 
   const passwordInitialValues = {

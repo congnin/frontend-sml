@@ -4,6 +4,7 @@ import './TourCard.scss';
 import Images from 'constants/images';
 import { Link } from 'react-router-dom';
 import { getLocaleDateString } from 'utils';
+import './TourCard.scss';
 
 TourCard.propTypes = {
   tour: PropTypes.object,

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import '../components/Detail/Detail.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchTour } from 'app/actions';
@@ -9,14 +10,15 @@ import SectionPictures from 'components/Detail/SectionPicture';
 import GoogleMap from 'components/map/GoogleMap';
 import Review from 'components/Review';
 import Cta from 'components/Detail/Cta';
+import TitlePage from 'constants/TitlePage';
 
 function TourDetailPage() {
   const { id } = useParams();
   const dispatch = useDispatch();
 
   const tour = useSelector((state) => state.fetchData.tour);
-  const user = useSelector((state) => state.user);
-  const { loggedIn } = user;
+  const auth = useSelector((state) => state.auth);
+  const { loggedIn } = auth;
 
   const errors = useSelector((state) => state.errors);
   const { tourLoading, tourErrMsg } = errors;
@@ -24,6 +26,10 @@ function TourDetailPage() {
   useEffect(() => {
     dispatch(fetchTour(id));
   }, [id, dispatch]);
+
+  useEffect(() => {
+    document.title = tour ? 'Natours | ' + tour.name : TitlePage.Detail;
+  }, [tour]);
 
   return (
     <>

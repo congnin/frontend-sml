@@ -3,6 +3,8 @@ import {
   FETCH_TOURS_FAILED,
   FETCH_TOUR_SUCCESS,
   FETCH_TOUR_FAILED,
+  FETCH_USERS_SUCCESS,
+  FETCH_USERS_FAILED,
 } from './actionTypes';
 
 import { updateObject } from '../utils';
@@ -11,6 +13,7 @@ const initialState = {
   tours: [],
   page: 0,
   tour: null,
+  users: [],
 };
 
 export default function tours(state = initialState, action) {
@@ -30,6 +33,14 @@ export default function tours(state = initialState, action) {
     case FETCH_TOUR_FAILED:
       return updateObject(state, {
         tour: null,
+      });
+    case FETCH_USERS_SUCCESS:
+      return updateObject(state, {
+        users: action.payload,
+      });
+    case FETCH_USERS_FAILED:
+      return updateObject(state, {
+        users: [],
       });
     default:
       return state;

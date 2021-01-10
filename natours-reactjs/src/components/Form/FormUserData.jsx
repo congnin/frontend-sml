@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Loader from 'react-spinners/ClipLoader';
 import * as Yup from 'yup';
+import './Form.scss';
 
 FormUserData.propTypes = {
   onSubmit: PropTypes.func,

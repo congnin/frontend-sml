@@ -9,8 +9,8 @@ import { getFirstName } from 'utils';
 export function AccountPanel(props) {
   const dispatch = useDispatch();
   const history = useHistory();
-  const user = useSelector((state) => state.user);
-  const { info } = user;
+  const auth = useSelector((state) => state.auth);
+  const { info } = auth;
 
   useEffect(() => {
     dispatch(actions.authCheckState());
@@ -21,7 +21,7 @@ export function AccountPanel(props) {
     history.push(RouteEnum.Home);
   };
 
-  const LoginLogout = !user.loggedIn ? (
+  const LoginLogout = !auth.loggedIn ? (
     <Link className="nav__el" to={RouteEnum.Login}>
       Login
     </Link>
@@ -31,12 +31,12 @@ export function AccountPanel(props) {
     </Link>
   );
 
-  const RegisterName = !user.loggedIn ? (
+  const RegisterName = !auth.loggedIn ? (
     <Link className="nav__el nav__el--cta" to={RouteEnum.SignUp}>
       Sign up
     </Link>
   ) : (
-    <Link className="nav__el" to={RouteEnum.Me}>
+    <Link className="nav__el" to={RouteEnum.Settings}>
       <img
         className="nav__user-img"
         src={Images.USERS_IMG + info.photo}

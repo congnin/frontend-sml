@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Loader from 'react-spinners/ClipLoader';
 import * as Yup from 'yup';
+import './Form.scss';
 
 FormChangePassword.propTypes = {
   onSubmit: PropTypes.func,
@@ -14,7 +15,7 @@ FormChangePassword.defaultProps = {
 };
 
 function FormChangePassword(props) {
-  const { initialValues, isSubmit, error } = props;
+  const { initialValues, isSubmit } = props;
 
   const validationSchema = Yup.object().shape({
     currentPass: Yup.string().required('This field is required.'),
@@ -33,8 +34,7 @@ function FormChangePassword(props) {
       initialValues={initialValues}
     >
       {(formikProps) => {
-        // do something here ...
-        const { values, errors, touched, isSubmitting, isValid } = formikProps;
+        const { isSubmitting, isValid } = formikProps;
 
         return (
           <Form className="form form-user-password" loading={isSubmitting}>

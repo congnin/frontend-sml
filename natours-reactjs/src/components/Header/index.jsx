@@ -3,6 +3,7 @@ import RouteEnum from 'constants/RouteEnum';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { AccountPanel } from './AccountPanel';
+import './Header.scss';
 
 function Header(props) {
   return (

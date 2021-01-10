@@ -34,7 +34,7 @@ const updateMeSuccess = (state, action) => {
   });
 };
 
-export default function user(state = initialState, action) {
+export default function auth(state = initialState, action) {
   switch (action.type) {
     case AUTH_SUCCESS:
       return authSuccess(state, action);
