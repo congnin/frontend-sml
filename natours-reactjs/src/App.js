@@ -7,6 +7,7 @@ import Header from 'components/Header';
 
 import RouteEnum from 'constants/RouteEnum';
 import LoggedInRoute from 'routing/LoggedInRoute';
+import ModalExample from 'pages/ModalExample';
 
 const AllToursPage = React.lazy(() => {
   return import('pages/AllToursPage');
@@ -40,6 +41,7 @@ function App(props) {
 
           <Route path={RouteEnum.Settings} component={AccountPage} />
           <Route path={RouteEnum.ManageUsers} component={UserDashboardPage} />
+          <Route path={RouteEnum.Reviews} component={ModalExample} />
           <Route path={RouteEnum.NotFound} component={NotFound} />
           <Redirect to={RouteEnum.NotFound} />
         </Switch>

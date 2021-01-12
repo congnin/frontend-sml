@@ -21,6 +21,9 @@ import {
   FETCH_USERS_INIT,
   FETCH_USERS_SUCCESS,
   FETCH_USERS_FAILED,
+  DELETE_USER_INIT,
+  DELETE_USER_SUCCESS,
+  DELETE_USER_FAILED,
 } from './actionTypes';
 
 function getErrorMessage(err) {
@@ -158,6 +161,35 @@ export const fetchUsersFail = (error) => {
     type: FETCH_USERS_FAILED,
     payload: error,
   };
+};
+
+export const deleteUserInit = () => {
+  return {
+    type: DELETE_USER_INIT,
+  };
+};
+
+export const deleteUserSuccess = (data) => {
+  return {
+    type: DELETE_USER_SUCCESS,
+  };
+};
+
+export const deleteUserFail = (error) => {
+  return {
+    type: FETCH_USERS_FAILED,
+    payload: error,
+  };
+};
+
+export const deleteUser = (id) => async (dispatch) => {
+  dispatch(deleteUserInit());
+  try {
+    await userApi.delete(id);
+    dispatch(deleteUserSuccess());
+  } catch (e) {
+    dispatch(deleteUserFail(getErrorMessage(e)));
+  }
 };
 
 export const fetchTour = (id) => async (dispatch) => {
