@@ -7,7 +7,6 @@ import TitlePage from 'constants/TitlePage';
 import { fetchUsers } from 'app/actions';
 import Images from 'constants/images';
 import Search from 'components/Search';
-import { ConfirmDeleteModal } from 'components/Modal/ConfirmDeleteModal';
 
 function UserDashboardPage(props) {
   const dispatch = useDispatch();
@@ -104,7 +103,6 @@ function UserDashboardPage(props) {
           </div>
         </div>
       </PrivatePage>
-      <ConfirmDeleteModal open={open} closeModal={cancelConfirmation} />
     </>
   );
 }

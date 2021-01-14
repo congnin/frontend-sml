@@ -8,13 +8,13 @@ Yarn version:
   1.22.10
 
 Node version: 
-  14.15.4
+  10.17.0
 
 Platform: 
   darwin x64
 
 Trace: 
-  Error: EACCES: permission denied, unlink '/Users/quocnd/Desktop/congnc/frontend-sml/nodejs-AndrewMead/task-manager/node_modules/.bin/acorn'
+  Error: EACCES: permission denied, unlink '/Users/quocnd/Desktop/congnc/frontend-sml/nodejs-AndrewMead/task-manager/node_modules/.bin/babylon'
 
 npm manifest: 
   {
@@ -49,6 +49,9 @@ npm manifest:
       "jest": "^23.6.0",
       "nodemon": "^1.18.9",
       "supertest": "^3.4.1"
+    },
+    "engines": {
+      "node": "^10"
     }
   }
 
