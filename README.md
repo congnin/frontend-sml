@@ -50,3 +50,6 @@
 ## INTERVIEW 
 1. [link 1](https://www.thatjsdude.com/interview/https://www.thatjsdude.com/interview/)
 2. [reactjs](https://github.com/Pau1fitz/react-interview/blob/master/readme.md#how-does-react-work)
+
+## Api Movie DB
+Yurius - Th****8**!
