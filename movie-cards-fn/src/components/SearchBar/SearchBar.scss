@@ -1,0 +1,83 @@
+.search {
+  margin: 0 1em;
+  height: 0.9em;
+
+  &-inline {
+    margin: -0.25em 1.15em 0 1.15em;
+  }
+
+  &__input {
+    width: 20em;
+    height: 2em;
+    transition: all 0.4s ease-in-out;
+    background: #151c24;
+    padding: 0.25em 0.75em;
+    border: 2px solid black;
+    border-radius: 1.5em;
+    outline: none;
+    color: white;
+    font-family: inherit;
+    margin-top: 0.5em;
+    margin-left: 1em;
+
+    &:focus {
+      border-color: #2769b4;
+    }
+
+    &-inline {
+      width: 4.5em;
+      height: auto;
+
+      @media screen and (max-width: 900px) {
+        width: 3em;
+        height: auto;
+      }
+
+      @media screen and (max-width: 480px) {
+        width: 3em;
+        height: auto;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      width: 40vw;
+      height: 1.5em;
+    }
+
+    @media screen and (max-width: 480px) {
+      width: 40vw;
+      height: 1.5em;
+    }
+  }
+
+  &__btn {
+    width: 2.75em;
+    height: 2.75em;
+    border-radius: 50%;
+    border: 2px solid black;
+    margin: 0 0 0 0.25em;
+    background: #151c24;
+    outline: none;
+
+    transition: all 300ms ease-in-out;
+    color: white;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+      background: #2769b4;
+      color: black;
+      border-radius: 10%;
+    }
+
+    &-inline {
+      width: 1.8em;
+      height: 1.8em;
+    }
+  }
+  &__icon {
+    color: white;
+    text-align: center;
+    font-size: 0.85em;
+  }
+}

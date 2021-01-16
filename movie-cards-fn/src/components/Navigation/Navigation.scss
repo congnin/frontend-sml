@@ -1,0 +1,31 @@
+.navigation {
+  position: absolute;
+  top: 0;
+  z-index: 999;
+
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 0.5em 0;
+
+  text-decoration: none;
+
+  @media screen and (min-width: 1824px) {
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 700px) {
+    font-size: 18px;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 480px) {
+    justify-content: center;
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 375px) {
+    justify-content: center;
+    font-size: 12px;
+  }
+}
