@@ -12,6 +12,9 @@ import { Route, Switch, useRouteMatch, withRouter } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { fetchMovie, addFavorite, removeFavorite } from '../../store/actions';
 import { NO_IMAGE, POSTER_URL } from '../../assets/constants';
+import Credits from '../../components/Credits';
+import Images from '../../components/Images';
+import Videos from '../../components/Videos';
 
 DetailMovie.propTypes = {};
 
@@ -23,7 +26,6 @@ function DetailMovie(props) {
     images,
     credits,
     isLoading,
-    isError,
     clickedMovieId,
   } = useSelector((state) => state.movie);
 
@@ -122,6 +124,17 @@ function DetailMovie(props) {
                 </LeftLayout>
               )}
             </Route>
+            <BottomLayout backdropImage={backdropImage}>
+              <Route path={`${path}/credits`}>
+                <Credits credits={credits} />
+              </Route>
+              <Route path={`${path}/images`}>
+                <Images backdrops={images.backdrops} title={movie.title} />
+              </Route>
+              <Route path={`${path}/videos`}>
+                <Videos />
+              </Route>
+            </BottomLayout>
           </Switch>
         </>
       ) : (

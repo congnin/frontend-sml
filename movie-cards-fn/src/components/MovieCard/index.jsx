@@ -9,9 +9,9 @@ import RemoveFavoriteButton from '../RemoveFavoriteButton';
 
 MovieCard.propTypes = {
   movie: PropTypes.object.isRequired,
-  removeMode: PropTypes.bool.isRequired,
+  removeMode: PropTypes.bool,
   handleMovieClick: PropTypes.func.isRequired,
-  handleRemoveClick: PropTypes.func.isRequired,
+  handleRemoveClick: PropTypes.func,
 };
 
 function MovieCard(props) {
@@ -19,7 +19,6 @@ function MovieCard(props) {
   const isMobile = useMediaQuery({ query: '(max-width: 640px)' });
 
   const { movie, removeMode, handleMovieClick, handleRemoveClick } = props;
-  console.log(removeMode);
 
   const { poster_path, title, vote_average, id, details } = movie;
   const runtime = details ? details.runtime : movie.runtime;

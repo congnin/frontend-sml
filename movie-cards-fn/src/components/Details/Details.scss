@@ -87,7 +87,7 @@
   }
 
   &__detail-title {
-    // @extend &__movie-title;
+    @extend .details__movie-title;
     font-size: 1em;
     font-weight: 600;
     text-align: center;

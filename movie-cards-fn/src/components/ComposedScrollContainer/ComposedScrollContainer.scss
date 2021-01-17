@@ -1,0 +1,70 @@
+.new-scroll-btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 15;
+
+  width: 4em;
+  background: rgba(0, 0, 0, 0.25);
+  border: 0;
+  outline: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 801px) {
+    width: 2.5em;
+  }
+}
+
+.scroll-container {
+  position: relative;
+
+  &__left {
+    @extend .new-scroll-btn;
+    left: 0;
+  }
+
+  &__right {
+    @extend .new-scroll-btn;
+    right: 0;
+  }
+}
+
+.horizontal-container {
+  display: flex;
+  position: relative;
+
+  overflow-x: hidden;
+
+  width: calc(100% - 4em);
+  margin: 0 4em;
+
+  @media screen and (max-width: 801px) {
+    width: calc(100% - 2.5em);
+    margin: 0 2.5em;
+  }
+}
+
+.prev-icon {
+  transform: rotateZ(90deg);
+
+  color: #fff;
+  margin: 0 auto;
+
+  transition: all 300ms ease;
+
+  &:hover {
+    transform: scale(1.35) rotateZ(90deg);
+  }
+}
+
+.next-icon {
+  @extend .prev-icon;
+  transform: rotateZ(-90deg);
+
+  &:hover {
+    transform: scale(1.35) rotateZ(-90deg);
+  }
+}
