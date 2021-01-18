@@ -1,0 +1,211 @@
+.rui-drawer-overlay {
+    background-color: rgba(black, .4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+@media (min-width: #{$xs + 1}px) {
+    .rui-drawer-overlay {
+        background-color: transparent;
+    }
+}
+
+.rui-drawer {
+    background-color: $lightgray;
+    position: absolute;
+    z-index: 9999;
+    box-shadow: 0 2px 5px rgba(black, .4);
+
+    &.left,
+    &.right {
+        height: 100vh;
+        max-height: 100vh;
+        overflow-y: auto;
+    }
+
+    &.left {
+        top: 0;
+        left: 0;
+    }
+
+    &.right {
+        top: 0;
+        right: 0;
+    }
+
+    &.bottom {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        min-width: 100%;
+    }
+
+    &.top {
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-width: 100%;
+    }
+
+    &.dark {
+        background-color: $night;
+
+        &.lifted {
+            box-shadow: 1px 1px 3px rgba(lightgray, .2);
+        }
+
+        .rui-drawer-header {
+            color: #fff;
+            background-color: $night;
+        }
+    }
+
+    &:not(.dark) {
+        .rui-drawer-header {
+            color: $dark;
+            background-color: $lightgray;
+        }
+
+        &.lifted {
+            box-shadow: 1px 1px 3px rgba(lightgray, .2);
+            border: 1px solid rgba(0,40,100,.12);
+        }
+    }
+}
+
+.rui-drawer__overlay-enter {
+    opacity: 0;
+}
+
+.rui-drawer__overlay-enter-active {
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
+}
+
+.rui-drawer__overlay-exit {
+    opacity: 0;
+}
+
+.rui-drawer__overlay-exit-active {
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
+}
+
+.rui-drawer-enter {
+    width: 0;
+}
+
+.rui-drawer-enter-active {
+    animation: drawerOpening 300ms ease-in;
+    -moz-animation: drawerOpening 300ms ease-in;
+}
+
+.rui-drawer-exit {
+    width: 0;
+}
+
+.rui-drawer-exit-active {
+    animation: drawerClosing 300ms ease-out;
+    -moz-animation: drawerClosing 300ms ease-out;
+}
+
+// Right side
+.rui-drawer-right-enter {
+    transform: translateX(100%);
+    transition: transform .3s;
+}
+
+.rui-drawer-right-enter-active {
+    transform: translateX(0%);
+}
+
+.rui-drawer-right-exit {
+    transform: translateX(0%);
+}
+
+.rui-drawer-right-exit-active {
+    transform: translateX(100%);
+    transition: transform .3s;
+}
+
+// Left side
+.rui-drawer-left-enter {
+    transform: translateX(-100%);
+    transition: transform .3s;
+}
+
+.rui-drawer-left-enter-active {
+    transform: translateX(0%);
+}
+
+.rui-drawer-left-exit {
+    transform: translateX(0%);
+}
+
+.rui-drawer-left-exit-active {
+    transform: translateX(-100%);
+    transition: transform .3s;
+}
+
+// Top side
+.rui-drawer-top-enter {
+    transform: translateY(-100%);
+    transition: transform .3s;
+}
+
+.rui-drawer-top-enter-active {
+    transform: translateY(0%);
+}
+
+.rui-drawer-top-exit {
+    transform: translateY(0%);
+}
+
+.rui-drawer-top-exit-active {
+    transform: translateY(-100%);
+    transition: transform .3s;
+}
+
+// Bottom side
+.rui-drawer-bottom-enter {
+    transform: translateY(100%);
+    transition: transform .3s;
+}
+
+.rui-drawer-bottom-enter-active {
+    transform: translateY(0%);
+}
+
+.rui-drawer-bottom-exit {
+    transform: translateY(0%);
+}
+
+.rui-drawer-bottom-exit-active {
+    transform: translateY(100%);
+    transition: transform .3s;
+}
+
+// Horizontal
+@keyframes drawerOpening {
+    0% { width: 0; min-width: 0;}
+    100% { width: 280px; min-width: 280px;}
+}
+
+@-moz-keyframes drawerOpening {
+    0% { width: 0; min-width: 0;}
+    100% { width: 280px; min-width: 280px;}
+}
+  
+@keyframes drawerClosing {
+    0% { width: 280px; min-width: 280px; }
+    100% { width: 0; min-width: 0; }
+}
+
+@-moz-keyframes drawerClosing {
+    0% { width: 280px; min-width: 280px; }
+    100% { width: 0; min-width: 0; }
+}

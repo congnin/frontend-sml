@@ -1,0 +1,350 @@
+.rui-list {
+    &.grid {
+        display: flex;
+        flex-wrap: wrap;
+
+        .rui-list-item {
+            display: block;
+            margin-top: -1px;
+
+            &.divider {
+                border-right: 1px solid lightgray;
+                border-top: 1px solid lightgray;
+            }
+
+            .rui-list-item__right-side {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+
+        &:not(.medium):not(.large) {
+            .rui-list-item {
+                padding: 10px;
+            }
+        }
+    
+        &.medium {
+            .rui-list-item {
+                padding: 10px;
+            }
+        }
+    
+        &.large {
+            .rui-list-item {
+                padding: 10px;
+            }
+        }
+    }
+
+    &:not(.medium):not(.large) {
+        .rui-list-item {
+            padding: 0 10px;
+            min-height: $defaultSize;
+            font-size: $defaultFont;
+
+            a {
+                font-size: $defaultFont;
+            }
+
+            .rui-list-subtitle {
+                font-size: .8rem;
+            }
+
+            .rui-icon {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &.medium {
+        .rui-list-item {
+            padding: 0 10px;
+            min-height: $mediumSize;
+            font-size: $mediumFont;
+
+            .rui-list-subtitle {
+                font-size: .85rem;
+            }
+
+            a {
+                font-size: $mediumFont;
+            }
+
+            .rui-icon {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &.large {
+        .rui-list-item {
+            padding: 0 10px;
+            min-height: $largeSize;
+            font-size: $largeFont;
+
+            .rui-list-subtitle {
+                font-size: .85rem;
+                padding: 0;
+                padding: 5px 0;
+            }
+
+            a {
+                font-size: $largeFont;
+            }
+
+            .rui-icon {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &.dark {
+        .rui-list-header {
+            color: #fff;
+        }
+
+        .rui-list-item {
+            color: #fff;
+            border-bottom-color: lightgray;
+
+            path {
+                fill: #fff;
+            }
+
+            &.hover:hover:not(.active)  {
+                background-color: rgba($light, .3);
+                transition: all .2s ease-in-out;
+                cursor: pointer;
+            }
+
+            &.hover.rounded:hover:not(.active)  {
+                background-color: rgba($light, .3);
+                transition: all .2s ease-in-out;
+                cursor: pointer;
+            }
+
+            &.hover.rounded:hover:not(.active)  {
+                background-color: rgba($light, .4);
+                transition: all .2s ease-in-out;
+                cursor: pointer;
+                border-radius: 30px;
+            }
+        }
+
+        .rui-list-item.active {
+            background-color: rgba($info, .4);
+            color: $info;
+
+            &.hover:hover {
+                cursor: pointer;
+            }
+
+            .rui-list-item__title-row {
+                .rui-icon {
+                    path {
+                        fill: $info;
+                    }
+                }
+            }
+        }
+
+        .rui-list-item.active.rounded {
+            background-color: rgba($info, .4);
+            border-radius: 30px;
+        }
+
+        .rui-list-subtitle {
+            color: lightgray;
+        }
+    }
+
+    &:not(.dark) {
+        .rui-list-item {
+            &.hover:hover:not(.active)  {
+                background-color: rgba(lightgray, .4);
+                transition: all .2s ease-in-out;
+                cursor: pointer;
+            }
+
+            &.hover.rounded:hover:not(.active)  {
+                background-color: rgba(lightgray, .4);
+                transition: all .2s ease-in-out;
+                cursor: pointer;
+                border-radius: 30px;
+            }
+        }
+
+        .rui-list-item.active {
+            &.info {
+                background-color: rgba($info, .2);
+                color: $info;
+
+                .rui-list-item__left-side {
+                    .rui-icon {
+                        svg {
+                            path {
+                                fill: $info;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.primary {
+                background-color: rgba($primary, .2);
+                color: $primary;
+
+                .rui-list-item__left-side {
+                    .rui-icon {
+                        svg {
+                            path {
+                                fill: $primary;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.success {
+                background-color: rgba($success, .2);
+                color: $success;
+
+                .rui-list-item__left-side {
+                    .rui-icon {
+                        svg {
+                            path {
+                                fill: $success;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            &.error {
+                background-color: rgba($error, .2);
+                color: $error;
+
+                .rui-list-item__left-side {
+                    .rui-icon {
+                        svg {
+                            path {
+                                fill: $error;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.hover:hover:not(.active)  {
+                background-color: lightgray; 
+                transition: all .2s ease-in-out;
+                cursor: pointer;
+            }
+
+            &.hover.rounded:hover:not(.active)  {
+                background-color: lightgray;
+                transition: all .2s ease-in-out;
+                cursor: pointer;
+            }
+        }
+
+        .rui-list-item.active.rounded {
+            border-radius: 30px;
+        }
+    }
+
+    & .btn {
+        padding: 0;
+    }
+
+    &.scrollabe {
+        overflow-y: auto;
+    }
+}
+
+.rui-list-header {
+    font-size: .9rem;
+    font-weight: 600;
+    padding: 10px;
+    color: gray;
+}
+
+.rui-list-subtitle {
+    display: block;
+    font-size: .8rem;
+    color: gray;
+    padding: 5px 0;
+    margin-bottom: 5px;
+
+    .tag {
+        margin: 0 !important;
+    }
+}
+
+.rui-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    outline: none;
+    font-weight: normal;
+
+    &:focus {
+        background-color: $lightgray;
+    }
+
+    .rui-list-item__title-row {
+        display: flex;
+        align-items: center;
+
+        span {
+            padding: 5px 0;
+        }
+    }
+
+    &.divider {
+        border-bottom: 1px solid #ddd;
+    }
+
+    &:not(.divider) {
+        margin: 5px 0;
+    }
+
+    &.dense {
+        padding: 10px;
+        font-size: .9rem;
+    }
+
+    &.hover:hover {
+        background-color: $lightgray;
+        transition: all .2s ease-in-out;
+        cursor: pointer;
+    }
+}
+
+
+.rui-list-item__right-side {
+    display: flex;
+    align-items: center;
+
+    & > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+.rui-list-item__left-side {
+    display: block;
+
+    & > div {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .checkbox {
+        margin-right: 10px;
+    }
+}

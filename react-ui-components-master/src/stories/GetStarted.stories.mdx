@@ -1,0 +1,75 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Get Started" />
+
+# Welcome to React UI Components
+
+<div style={{ textAlign: 'center', margin: '16px 0' }}>
+  <a style={{ margin: 4}} aria-label="NPM version" href="https://www.npmjs.com/package/@assenti/rui-components">
+    <img alt="npm version" src="https://badgen.net/npm/v/@assenti/rui-components"/>
+  </a>
+  <a style={{ margin: 4}} aria-label="Downloads" href="https://npm-stat.com/charts.html?package=%40assenti%2Frui-components">
+    <img alt="npm stats" src="https://badgen.net/npm/dw/@assenti/rui-components"/>
+  </a>
+  <a style={{ margin: 4}} href="https://github.com/Assenti/react-ui-components/blob/master/LICENSE">
+    <img alt="License" src="https://img.shields.io/badge/License-MIT-brightgreen.svg"/>
+  </a>
+</div>
+
+## Requirements for using rui-components
+You've created your app using [CRA (Create react app)](https://create-react-app.dev/docs/getting-started/)
+
+## Install
+Install package from NPM
+```bash
+% npm i @assenti/rui-components -S
+```
+Install package from NPM using yarn
+
+```bash
+% yarn add @assenti/rui-components
+```
+Import styles globally in index.js / index.ts
+```jsx
+import '@assenti/rui-components/css/index.css';
+```
+
+## Usage
+```jsx
+import { Card, Button, Icon } from '@assenti/rui-components';
+import React from 'react';
+
+function App() {
+  return (
+    <Card style={{ 
+            width: 300,
+            height: 300
+        }}>
+      <Button 
+        color="primary" 
+        name="Rocket" 
+        icon={<Icon name="rocket"/>}/>
+    </Card>
+  );
+}
+
+export default App;
+```
+
+## Changelog
+You can track changelog [here](https://github.com/Assenti/react-ui-components/blob/master/CHANGELOG.md)
+
+## Where can i find @types/@assenti/rui-components ?
+Types declarations for TypeScript are built-in
+
+## How to set my own preset colors ?
+Just override it in css styles
+
+## Can i use custom fonts ?
+Just import your fonts and override it in css styles
+
+## I found a bug
+Open an issue, please, i will try to fix it ASAP
+
+## I want to contribute
+You are welcome

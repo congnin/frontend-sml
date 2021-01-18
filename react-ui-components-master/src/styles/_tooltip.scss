@@ -1,0 +1,288 @@
+.rui-tooltip {
+    position: relative;
+    display: inline-flex;
+    justify-content: center !important;
+
+    &:hover {
+        .rui-tooltip__text {
+            visibility: visible;
+            opacity: 1;
+            font-size: $defaultFont;
+        }
+    }
+
+    &.primary {
+        .rui-tooltip__text {
+            background-color: $primary;
+        }
+
+        &:not(.left):not(.right):not(.bottom) {
+            .rui-tooltip__text {
+                &::after {
+                    border-color: $primary transparent transparent transparent;
+                }
+            }
+        }
+
+        &.right {
+            .rui-tooltip__text {
+                &::after {
+                    border-color: transparent $primary transparent transparent;
+                }
+            }
+        }
+    
+        &.bottom {
+            .rui-tooltip__text {
+                &::after {
+                    border-color: transparent transparent $primary transparent;
+                }
+            }
+        }
+    
+        &.left {
+            .rui-tooltip__text {
+                &::after {
+                    border-color: transparent transparent transparent $primary;
+                }
+            }
+        }
+    }
+
+    &.info {
+        .rui-tooltip__text {
+            background-color: $info;
+        }
+
+        &:not(.left):not(.right):not(.bottom) {
+            .rui-tooltip__text {
+                &::after {
+                    border-color: $info transparent transparent transparent;
+                }
+            }
+        }
+
+        &.right {
+            .rui-tooltip__text {
+                &::after {
+                    border-color: transparent $info transparent transparent;
+                }
+            }
+        }
+    
+        &.bottom {
+            .rui-tooltip__text {
+                &::after {
+                    border-color: transparent transparent $info transparent;
+                }
+            }
+        }
+    
+        &.left {
+            .rui-tooltip__text {
+                &::after {
+                    border-color: transparent transparent transparent $info;
+                }
+            }
+        }
+    }
+
+    &.success {
+        .rui-tooltip__text {
+            background-color: $success;
+        }
+
+        &:not(.left):not(.right):not(.bottom) {
+            .rui-tooltip__text {
+                &::after {
+                    border-color: $success transparent transparent transparent;
+                }
+            }
+        }
+
+        &.right {
+            .rui-tooltip__text {
+                &::after {
+                    border-color: transparent $success transparent transparent;
+                }
+            }
+        }
+    
+        &.bottom {
+            .rui-tooltip__text {
+                &::after {
+                    border-color: transparent transparent $success transparent;
+                }
+            }
+        }
+    
+        &.left {
+            .rui-tooltip__text {
+                &::after {
+                    border-color: transparent transparent transparent $success;
+                }
+            }
+        }
+    }
+
+    &.error {
+        .rui-tooltip__text {
+            background-color: $error;
+        }
+
+        &:not(.left):not(.right):not(.bottom) {
+            .rui-tooltip__text {
+                &::after {
+                    border-color: $error transparent transparent transparent;
+                }
+            }
+        }
+
+        &.right {
+            .rui-tooltip__text {
+                &::after {
+                    border-color: transparent $error transparent transparent;
+                }
+            }
+        }
+    
+        &.bottom {
+            .rui-tooltip__text {
+                &::after {
+                    border-color: transparent transparent $error transparent;
+                }
+            }
+        }
+    
+        &.left {
+            .rui-tooltip__text {
+                &::after {
+                    border-color: transparent transparent transparent $error;
+                }
+            }
+        }
+    }
+
+    &:not(.primary):not(.info):not(.success):not(.error) {
+        .rui-tooltip__text {
+            background-color: rgba(black, .9);
+        }
+
+        &:not(.left):not(.right):not(.bottom) {
+            .rui-tooltip__text {
+                &::after {
+                    border-color: rgba(black, .9) transparent transparent transparent;
+                }
+            }
+        }
+
+        &.right {
+            .rui-tooltip__text {
+                &::after {
+                    border-color: transparent rgba(black, .9) transparent transparent;
+                }
+            }
+        }
+    
+        &.bottom {
+            .rui-tooltip__text {
+                &::after {
+                    border-color: transparent transparent rgba(black, .9) transparent;
+                }
+            }
+        }
+    
+        &.left {
+            .rui-tooltip__text {
+                &::after {
+                    border-color: transparent transparent transparent rgba(black, .9);
+                }
+            }
+        }
+    }
+
+    .rui-tooltip__text {
+        visibility: hidden;
+        white-space: nowrap;
+        color: #fff;
+        text-align: center;
+        border-radius: 2px;
+        padding: 5px;
+        text-shadow: none;
+        font-weight: normal;
+        position: absolute;
+        z-index: 50;
+        font-size: $defaultFont;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    &:not(.left):not(.right):not(.bottom) {
+        .rui-tooltip__text {
+            bottom: calc(100% + 5px);
+            &::after {
+                content: " ";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+            }
+        }
+    }
+
+    &.right {
+        align-items: center !important;
+
+        .rui-tooltip__text {
+            left: calc(100% + 5px);
+
+            &::after {
+                content: " ";
+                position: absolute;
+                top: 50%;
+                right: 100%;
+                margin-top: -5px;
+                border-width: 5px;
+                border-style: solid;
+            }
+        }
+    }
+
+    &.bottom {
+        justify-content: center !important;
+
+        .rui-tooltip__text {
+            top: calc(100% + 5px);
+
+            &::after {
+                content: " ";
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+            }
+        }
+    }
+
+    &.left {
+        align-items: center !important;
+
+        .rui-tooltip__text {
+            right: calc(100% + 5px);
+    
+            &::after {
+                content: " ";
+                position: absolute;
+                top: 50%;
+                left: 100%; 
+                margin-top: -5px;
+                border-width: 5px;
+                border-style: solid;
+            }
+        }
+    }
+}

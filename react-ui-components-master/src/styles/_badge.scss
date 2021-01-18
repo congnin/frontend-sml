@@ -1,0 +1,76 @@
+.rui-badge-container {
+    display: inline-flex;
+    justify-content: flex-end;
+    position: relative;
+    padding: 2px;
+
+    &.rounded {
+        .rui-badge {
+            border-radius: 60px;
+        }
+    }
+
+    &:not(.rounded) {
+        .rui-badge {
+            border-radius: $radius;
+        }
+    }
+
+    &.primary {
+        .rui-badge {
+            background-color: $primary;
+            color: #fff;
+        }
+    }
+
+    &.info {
+        .rui-badge {
+            background-color: $info;
+            color: #fff;
+        }
+    }
+
+    &.success {
+        .rui-badge {
+            background-color: $success;
+            color: #fff;
+        }
+    }
+
+    &.error {
+        .rui-badge {
+            background-color: $error;
+            color: #fff;
+        }
+    }
+
+    &.dark {
+        .rui-badge {
+            background-color: $dark;
+            color: #fff;
+        }
+    }
+
+    &.secondary {
+        .rui-badge {
+            background-color: $lightgray;
+        }
+    }
+
+    .rui-badge {
+        position: absolute;
+        bottom: calc(100% - 10px);
+        left: calc(100% - 10px);
+        font-size: .7rem;
+        min-width: .7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .3s ease-in-out;
+
+        &:not(.hide) {
+            padding: 2px;
+        }
+    }
+}
+

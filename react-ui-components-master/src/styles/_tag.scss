@@ -1,0 +1,213 @@
+.rui-tag {
+    display: inline-flex;
+    align-items: center;
+    align-items: center;
+    border: 1px solid;
+    border-radius: $radius;
+    border-color: lightgray;
+    background-color: $lightgray;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    
+    &.closable {
+        animation: ruiAppear .2s ease-in;
+        -webkit-animation: ruiAppear .2s ease-in;
+        -moz-animation: ruiAppear .2s ease-in;
+        -o-animation: ruiAppear .2s ease-in;
+    }
+
+    &-close {
+        cursor: pointer;
+        font-size: 20px;
+        margin-left: 4px;
+    }
+
+    &.upprecase {
+        text-transform: uppercase;
+    }
+
+    &.lifted {
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,.15);
+    }
+
+    &:not(.small):not(.tiny) {
+        padding: 0 6px;
+        height: 30px;
+        margin: 5px;
+        font-size: .9rem;
+    }
+
+    &.small {
+        padding: 0 5px;
+        height: 25px;
+        margin: 3px;
+        font-size: .8rem;
+    }
+
+    &.tiny {
+        padding: 0 3px;
+        height: 20px;
+        margin: 3px;
+        font-size: .75rem;
+
+        .rui-tag-close {
+            font-size: 18px;
+        }
+    }
+
+    &.rounded {
+        border-radius: 60px;
+    }
+
+    &.tile {
+        border-radius: 0;
+    }
+
+    &.smooth {
+        border-radius: $radius * 2;
+    }
+
+    &.yellow {
+        background-color: $yellow;
+        border-color: $yellow;
+        color: #000;
+
+        &.outlined {
+            border-color: $yellow;
+            background-color: transparent;
+            color: $yellow;
+        }
+    }
+
+    &.primary {
+        background-color: $primary;
+        border-color: $primary;
+        color: #fff;
+
+        path {
+            fill: #fff;
+        }
+
+        &.outlined {
+            border-color: $primary;
+            background-color: transparent;
+            color: $primary;
+
+            path {
+                fill: $primary;
+            }
+        }
+    }
+
+    &.info {
+        background-color: $info;
+        border-color: $info;
+        color: #fff;
+
+        path {
+            fill: #fff;
+        }
+
+        &.outlined {
+            border-color: $info;
+            background-color: transparent;
+            color: $info;
+
+            path {
+                fill: $info;
+            }
+        }
+    }
+
+    &.error {
+        background-color: $error;
+        border-color: $error;
+        color: #fff;
+
+        path {
+            fill: #fff;
+        }
+
+        &.outlined {
+            border-color: $error;
+            background-color: transparent;
+            color: $error;
+
+            path {
+                fill: $error;
+            }
+        }
+    }
+
+    &.success {
+        background-color: $success;
+        border-color: $success;
+        color: #fff;
+
+        path {
+            fill: #fff;
+        }
+
+        &.outlined {
+            border-color: $success;
+            background-color: transparent;
+            color: $success;
+
+            path {
+                fill: $success;
+            }
+        }
+    }
+
+    &.secondary {
+        background-color: $secondary;
+        border-color: $secondary;
+        color: black;
+
+        path {
+            fill: $dark;
+        }
+
+        &.outlined {
+            border-color: $secondary;
+            background-color: transparent;
+            color: $secondary;
+        }
+    }
+
+    &.dark {
+        background-color: $dark;
+        border-color: $dark;
+        color: #fff;
+
+        path {
+            fill: #fff;
+        }
+
+        &.outlined {
+            border-color: $dark;
+            background-color: transparent;
+            color: $dark;
+
+            path {
+                fill: $dark;
+            }
+        }
+    }
+}
+
+@keyframes ruiAppear {
+    0% { transform: scale(.8); opacity: .5;}
+    100% { transform: scale(1); opacity: .5;}
+}
+
+@-webkit-keyframes ruiAppear {
+    0% { transform: scale(.8); opacity: .5;}
+    100% { transform: scale(1); opacity: .5;}
+}
+
+@-moz-keyframes ruiAppear {
+    0% { transform: scale(.8); opacity: .5;}
+    100% { transform: scale(1); opacity: .5;}
+}

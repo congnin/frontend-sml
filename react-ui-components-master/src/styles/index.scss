@@ -1,0 +1,141 @@
+/**
+@license MIT
+Copyright (c) 2020 Asset Sultanov
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+html, body, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote,
+a, abbr, acronym, address, big, cite,
+del, dfn, em, img, ins, kbd, q, s, samp,
+strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, caption,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, input, textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 15px;
+  vertical-align: baseline;
+}
+* {
+  box-sizing: border-box;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+@import 'constants';
+@import 'colors';
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    scroll-behavior: smooth !important;
+    
+    &::-webkit-scrollbar {
+        width: 3.5px;
+        height: 3.5px;
+        background-color: $lightgray;
+        border-radius: $radius;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: lightgray;
+      outline: 1px solid #fff;
+    }
+}
+ 
+@import 'helpers';
+@import 'app';
+@import 'header';
+@import 'content';
+@import 'btn';
+@import 'page';
+@import 'drawer';
+@import 'list';
+@import 'tooltip';
+@import 'checkbox';
+@import 'input';
+@import 'uploader';
+@import 'pagination';
+@import 'select';
+@import 'table';
+@import 'modal';
+@import 'dropdown';
+@import 'card';
+@import 'switch';
+@import 'tag';
+@import 'badge';
+@import 'radio';
+@import 'icon';
+@import 'preloader';
+@import 'link';
+@import 'code';
+@import 'font';
+@import 'margins';
+@import 'breakpoints';
+@import 'collapse';
+@import 'popover';
+@import 'animations';
+@import 'dialog';
+@import 'timeline';
+@import 'tabs';
+@import 'rating';
+@import 'floating-btn';
+@import 'avatar';
+@import 'breadcrumbs';
+@import 'progress';
+@import 'calendar';
+@import 'alert';
+@import 'timepicker';
+@import 'date-picker';
+@import 'autocomplete';
+@import 'expansion-list';
+@import 'dock';
+@import 'divider';
+@import 'slider';
+@import 'footer';
+@import 'avatar-uploader';
+@import 'carousel';
+@import 'statistics';
+@import 'skeleton';
+@import 'sidebar';
+@import 'spinner';

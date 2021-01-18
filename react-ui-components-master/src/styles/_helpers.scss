@@ -1,0 +1,168 @@
+.overflow-y {
+    overflow-y: auto;
+}
+
+.overflow-x {
+    overflow-x: auto;
+}
+
+.overflow {
+    overflow: auto;
+}
+
+.row {
+    display: flex;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.row-inline {
+    display: inline-flex;
+}
+
+.col {
+    flex-grow: 1;
+    flex: 1;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.align-top {
+    align-items: flex-start;
+}
+
+.align-bottom {
+    align-items: flex-end;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.half-width {
+    width: 50%;
+}
+
+.spacer {
+    flex-grow: 1;
+}
+
+.border {
+    border-radius: $radius;
+}
+
+.smooth-border {
+    border-radius: $radius * 2;
+}
+
+.hoverable {
+
+    &:hover {
+        background-color: $lightgray;
+        transition: all .2s ease-in-out;
+        border-radius: $radius;
+    }
+
+    &.dark:hover {
+        background-color: gray;
+    }
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+}
+
+.tile {
+    border-radius: 0 !important;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.no-select {
+    user-select: none;
+    -moz-user-select: none;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+p {
+    margin: 10px 0;
+    font-size: $defaultFont;
+}

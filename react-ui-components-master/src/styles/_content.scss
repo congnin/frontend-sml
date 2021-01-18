@@ -1,0 +1,22 @@
+.rui-content {
+    transition: all .3s ease-in-out;
+    width: 100%;
+    max-height: calc(100vh - 50px);
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 3.5px;
+        height: 3.5px;
+        background-color: $lightgray;
+        border-radius: $radius;
+    }
+     
+    &::-webkit-scrollbar-thumb {
+      background-color: lightgray;
+      outline: 1px solid #fff;
+    }
+}
+
+.rui-content-inner {
+    padding: 1% 2%;
+}

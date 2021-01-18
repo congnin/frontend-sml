@@ -1,0 +1,21 @@
+.rui-expansion-list {
+    .rui-collapse {
+        border-bottom: 1px solid #ccc;
+
+        &.active {
+            background-color: rgba(lightgray, .4);
+        }
+    }
+
+    &.hover {
+        .rui-collapse:hover {
+            background-color: rgba(lightgray, .4);
+        }
+    }
+
+    &:not(.dark) {
+        .rui-expansion-list-item-content {
+            background-color: #fafafa;
+        }
+    }
+}

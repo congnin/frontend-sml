@@ -1,0 +1,229 @@
+.rui-radio-group {
+    display: inline-flex;
+
+    &.vertical {
+        flex-direction: column;
+    }
+}
+
+.rui-radio {
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    margin: 5px;
+    padding-left: 22px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:not(.medium):not(.large) {
+        font-size: $defaultFont;
+    }
+
+    &.medium {
+        font-size: $mediumFont;
+    }  
+
+    &.large {
+        font-size: $largeFont;
+    }
+
+    &.disabled {
+        color: gray;
+        cursor: not-allowed;
+        color: gray !important;
+        user-select: none;
+        -moz-user-select: none;
+
+        .rui-radio-checkmark {
+            background-color: transparent;
+            border: 1px solid gray;
+        }
+
+        .rui-radio-checkmark:after {
+            background-color: gray;
+        }
+
+        input:checked ~ .rui-radio-checkmark {
+            background-color: transparent;
+        }
+
+        &:hover {
+            color: darken(gray, 10%);
+        }
+
+        input[type=radio]:checked + label:before,
+        input[type=radio]:checked + label span.sg-icon-target:before {
+            color: #fff;
+        }
+
+        input:focus {
+            box-shadow: 0 0 3px 1px rgba(gray, .3);
+        }
+    }
+
+    .rui-radio-checkmark {
+        position: absolute;
+        top: calc(50% - 7px);
+        left: 0;
+        height: 14px;
+        width: 14px;
+        border-radius: 50%;
+    }
+
+    .rui-radio-checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    input:checked ~ .rui-radio-checkmark:after {
+        display: block;
+    }
+
+    .rui-radio-checkmark:after {
+        top: calc(50% - 3px);
+        left: calc(50% - 3px);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+    }
+
+    &.primary:not(.disabled) {
+        color: $primary;
+
+        .rui-radio-checkmark {
+            background-color: transparent;
+            border: 1px solid $primary;
+        }
+
+        .rui-radio-checkmark:after {
+            background-color: $primary;
+        }
+
+        input:checked ~ .rui-radio-checkmark {
+            background-color: transparent;
+        }
+
+        &:hover {
+            color: darken($primary, 10%);
+        }
+
+        input[type=radio]:checked + label:before,
+        input[type=radio]:checked + label span.sg-icon-target:before {
+            color: #fff;
+        }
+
+        input:focus {
+            box-shadow: 0 0 3px 1px rgba($primary, .3);
+        }
+    }
+
+    &.info:not(.disabled) {
+        color: $info;
+
+        .rui-radio-checkmark {
+            background-color: transparent;
+            border: 1px solid $info;
+        }
+
+        .rui-radio-checkmark:after {
+            background-color: $info;
+        }
+
+        input:checked ~ .rui-radio-checkmark {
+            background-color: transparent;
+        }
+
+        &:hover {
+            color: darken($info, 10%);
+        }
+
+        input[type=radio]:checked + label:before,
+        input[type=radio]:checked + label span.sg-icon-target:before {
+            color: #fff;
+        }
+
+        input:focus {
+            box-shadow: 0 0 3px 1px rgba($info, .3);
+        }
+    }
+
+    &.success:not(.disabled) {
+        color: $success;
+
+        .rui-radio-checkmark {
+            background-color: transparent;
+            border: 1px solid $success;
+        }
+
+        .rui-radio-checkmark:after {
+            background-color: $success;
+        }
+
+        input:checked ~ .rui-radio-checkmark {
+            background-color: transparent;
+        }
+
+        &:hover {
+            color: darken($success, 10%);
+        }
+
+        input[type=radio]:checked + label:before,
+        input[type=radio]:checked + label span.sg-icon-target:before {
+            color: #fff;
+        }
+
+        input:focus {
+            box-shadow: 0 0 3px 1px rgba($success, .3);
+        }
+    }
+
+    &.error:not(.disabled) {
+        color: $error;
+
+        .rui-radio-checkmark {
+            background-color: transparent;
+            border: 1px solid $error;
+        }
+
+        .rui-radio-checkmark:after {
+            background-color: $error;
+        }
+
+        input:checked ~ .rui-radio-checkmark {
+            background-color: transparent;
+        }
+
+        &:hover {
+            color: darken($error, 10%);
+        }
+
+        input[type=radio]:checked + label:before,
+        input[type=radio]:checked + label span.sg-icon-target:before {
+            color: #fff;
+        }
+
+        input:focus {
+            box-shadow: 0 0 3px 1px rgba($error, .3);
+        }
+    }
+
+    input[type=radio] {
+        outline: none;
+        cursor: pointer;
+        margin-right: 6px;
+        position: absolute;
+        opacity: 0;
+    }
+
+    input:disabled {
+        cursor: not-allowed;
+    }
+
+    & > span {
+        margin-right: 15px;
+    }
+}

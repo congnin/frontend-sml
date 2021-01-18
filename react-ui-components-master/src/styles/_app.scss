@@ -1,0 +1,14 @@
+.rui-app {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+
+    &.dark {
+        background-color: #2d2d2d;
+        color: #fff;
+
+        .rui-page-title {
+            text-shadow: none;
+        }
+    }
+}

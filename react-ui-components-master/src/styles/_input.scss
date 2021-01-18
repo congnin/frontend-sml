@@ -1,0 +1,470 @@
+.rui-input-field {
+    display: inline-block;
+
+    &.dark {
+        .rui-input-container {
+            background-color: transparent;
+
+            input,
+            textarea {
+                color: #fff;
+            }
+
+            .rui-input-clear {
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    min-width: 20px;
+    
+                    path {
+                        fill: lightgray !important;
+                    }
+                }
+            }
+        }
+
+        .rui-input-container:hover {
+            background-color: transparent;
+            transition: all .2s ease-in-out;
+        }
+
+        .rui-input-container.focus {
+            background-color: transparent;
+        }
+
+        & > label {
+            color: #fff;
+        }
+
+        .rui-input-field__hint {
+            color: #fff;
+        }
+
+        i {
+            svg {
+                path {
+                    fill: lightgray;
+                }
+            }
+        }            
+    }
+
+    &:not(.dark) {
+        .rui-input-container:hover {
+            background-color: #fff;
+            transition: all .2s ease-in-out;
+        }
+
+        .rui-input-container.focus {
+            background-color: #fff;
+        }
+
+        & > label {
+            color: $dark;
+        }
+
+        .rui-input-field__hint {
+            color: $dark;
+        }
+    }
+
+    &.white-background:not(.dark) {
+        .rui-input-container {
+            background-color: #fff;
+        }
+    }
+
+    &.lifted:not(.disabled) {
+        .rui-input-container {
+            box-shadow: 0 1px 2px rgba(black, .2);
+        }
+    }
+
+    &.disabled {
+        .rui-input-container,
+        input,
+        textarea {
+            cursor: not-allowed;
+        }
+    }
+
+    &.tile {
+        .rui-input-container {
+            border-radius: 0;
+        }
+    }
+
+    &.rounded {
+        .rui-input-container {
+            border-radius: 60px;
+        }
+    }
+
+    &.smooth {
+        .rui-input-container {
+            border-radius: $radius * 2.3;
+        }
+    }
+
+    &:not(.rounded):not(.smooth):not(.tile) {
+        .rui-input-container {
+            border-radius: $radius;
+        }
+    }
+
+    & > label {
+        display: block;
+        font-size: .85rem;
+        user-select: none;
+        -moz-user-select: none;
+        transition: all .2s ease-in-out;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 3px 0;
+        color: $dark;
+        cursor: pointer;
+    }
+
+    i {
+        svg {
+            path {
+                fill: gray;
+            }
+        }
+    }
+
+    .rui-input-field__hint {
+        padding: 3px 0;
+        font-size: .8rem;
+
+        &.error {
+            color: $error;
+        }
+
+        &.success {
+            color: $success;
+        }
+    }
+
+    &:not(.medium):not(.large) {
+        .rui-input-container {
+            input {
+                height: $defaultSize;
+                max-height: $defaultSize - 2px;
+                padding: 0 10px;
+                font-size: $defaultFont;
+            }
+
+            textarea {
+                padding: 8px;
+                font-size: $defaultFont;
+            }
+
+            svg {
+                min-width: 18px;
+                min-height: 18px;
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+
+    &.medium {
+        .rui-input-container {
+            input,
+            textarea {
+                height: $mediumSize;
+                max-height: $mediumSize - 2px;
+                padding: 10px 12px;
+                font-size: $mediumFont;
+            }
+
+            svg {
+                min-width: 20px;
+                min-height: 20px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    &.large {
+        .rui-input-container {
+            input,
+            textarea {
+                height: $largeSize;
+                max-height: $largeSize - 2px;
+                padding: 10px 15px;
+                font-size: $largeFont;
+            }
+
+            svg {
+                min-width: 20px;
+                min-height: 20px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    &.primary {
+        label.active {
+            color: $primary;
+        }
+
+        input, textarea {
+            caret-color: $primary;
+        }
+
+        .rui-input-container:hover {
+            border-color: $primary;
+            transition: all .2s ease-in-out;
+
+            i {
+                svg {
+                    path {
+                        fill: $primary;
+                        transition: all .2s ease-in-out;
+                    }
+                }
+            }
+        }
+
+        .rui-input-container.focus {
+            border-color: $primary;
+            box-shadow: 0 0 3px 1px rgba($primary, .3);
+            transition: all .2s ease-in-out;
+
+            svg:first-child {
+                path {
+                    fill: $primary;
+                    transition: all .2s ease-in-out;
+                }
+            }
+        }
+    }
+    
+    &.info {
+        label.active {
+            color: $info;
+        }
+
+        input, textarea {
+            caret-color: $info;
+        }
+
+        .rui-input-container:hover {
+            border-color: $info;
+            transition: all .2s ease-in-out;
+
+            i {
+                svg {
+                    path {
+                        fill: $info;
+                        transition: all .2s ease-in-out;
+                    }
+                }
+            }
+        }
+
+        .rui-input-container.focus {
+            border-color: $info;
+            box-shadow: 0 0 3px 1px rgba($info, .3);
+            transition: all .2s ease-in-out;
+
+            svg:first-child,
+            svg:last-child {
+                path {
+                    fill: $info;
+                    transition: all .2s ease-in-out;
+                }
+            }
+        }
+    }
+
+    &.error {
+        label.active {
+            color: $error;
+        }
+
+        input, textarea {
+            caret-color: $error;
+        }
+
+        .rui-input-container:hover {
+            border-color: $error;
+            transition: all .2s ease-in-out;
+
+            i {
+                svg {
+                    path {
+                        fill: $error;
+                        transition: all .2s ease-in-out;
+                    }
+                }
+            }
+        }
+
+        .rui-input-container.focus {
+            border-color: $error;
+            box-shadow: 0 0 3px 1px rgba($error, .3);
+            transition: all .2s ease-in-out;
+
+            svg:first-child,
+            svg:last-child {
+                path {
+                    fill: $error;
+                    transition: all .2s ease-in-out;
+                }
+            }
+        }
+    }
+
+    &.success {
+        label.active {
+            color: $success;
+        }
+
+        input, textarea {
+            caret-color: $success;
+        }
+
+        .rui-input-container:hover {
+            border-color: $success;
+            transition: all .2s ease-in-out;
+
+            i {
+                svg {
+                    path {
+                        fill: $success;
+                        transition: all .2s ease-in-out;
+                    }
+                }
+            }
+        }
+
+        .rui-input-container.focus {
+            border-color: $success;
+            box-shadow: 0 0 3px 1px rgba($success, .3);
+            transition: all .2s ease-in-out;
+
+            svg:first-child,
+            svg:last-child {
+                path {
+                    fill: $success;
+                    transition: all .2s ease-in-out;
+                }
+            }
+        }
+    }
+
+    &.textarea {
+        .rui-input-container {
+            align-items: flex-start;
+
+            .rui-input-prefix,
+            .rui-input-clear {
+                margin-top: 8px;
+            }
+        }
+    }
+
+    &:not(.textarea) {
+        .rui-input-container {
+            align-items: center;
+        }
+    }
+    
+    .rui-input-container {
+        display: inline-flex;
+        width: 100%;
+        border: 1px solid lightgray;
+        background-color: $lightgray;
+        outline: none;
+        overflow: hidden;
+
+        .rui-btn {
+            border-radius: 0;
+            margin: 0;
+        }
+
+        .rui-input-prefix {
+            margin-left: 5px;
+            margin-right: 5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .rui-input-suffix {
+            .rui-icon {
+                margin-right: 5px;
+            }
+        }
+
+        .rui-input-clear {
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            margin-left: 5px;
+            margin-right: 10px;
+                
+            svg {
+                width: 20px;
+                height: 20px;
+                min-width: 20px;
+
+                path {
+                    fill: gray !important;
+                }
+            }
+        }
+
+        & > textarea {
+            resize: none;
+
+            &::-webkit-scrollbar {
+                width: 3.5px;
+                background-color: $lightgray;
+                border-radius: $radius;
+            }
+             
+            &::-webkit-scrollbar-thumb {
+              background-color: lightgray;
+              outline: 1px solid #fff;
+            }
+        }
+
+        & > input,
+        & > textarea {
+            outline: none;
+            border: none;
+            background-color: transparent;
+            width: 100%;
+        }
+
+        & > textarea {
+            font-family: inherit;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        & > input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+    
+        & > i {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 5px;
+
+            svg {
+                margin-right: 0 !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,355 @@
+.rui-input-uploader {
+    width: 100%;
+    margin: 5px 0;
+
+    &:not(.drop-box) {
+        .rui-icon {
+            width: 24px !important;
+            height: 24px !important;
+        }
+    }
+
+    &.drop-box {
+        .prefix {
+            display: none;
+        }
+
+        .inbox {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            top: 25%;
+            left: 25%;
+
+            svg {
+                width: 100%;
+                height: 100%;
+
+                path {
+                    fill: #E0E0E0 !important;
+                }
+            }
+            
+        }
+
+        label {
+            display: flex !important;
+            align-items: flex-end;
+            justify-content: center;
+            height: calc(100% - 20px);
+            border: 2px dashed #ccc;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+            color: gray;
+            text-transform: uppercase;
+            width: 100% !important;
+            text-align: center;
+            overflow: visible !important;
+            white-space: normal !important;
+        }
+    }
+
+    .rui-input-uploader__label {
+        font-size: .85rem;
+        color: $dark;
+        padding: 3px 0;
+    }
+
+    &.dark {
+        .rui-input-uploader__container {
+            background-color: transparent;
+
+            i {
+                margin: 0 5px;
+                svg {
+                    path {
+                        fill: lightgray;
+                    }
+                }
+            }
+
+            span {
+                font-size: .9rem;
+                color: lightgray;
+            }
+        }
+
+        .rui-input-uploader__item {
+            &:last-child {
+                border-bottom: none;
+            }
+    
+            &:hover {
+                background-color: gray;
+            }
+        }
+
+        .rui-input-uploader__item-image {
+            & > span {
+                color: #fff;
+            }
+        }
+    }
+
+    .rui-input-uploader__item-image {
+        display: flex;
+        align-items: center;
+
+        & > div {
+            margin-right: 10px;
+            width: 30px;
+            min-width: 30px;
+            height: 30px;
+            border-radius: $radius;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        & > span {
+            font-size: .9rem;
+        }
+    }
+
+    &:not(.dark) {
+        .rui-input-uploader__container {
+            &:hover:not(.disabled) {
+                background-color: #fff;
+            }
+
+            i {
+                margin: 0 5px;
+                svg {
+                    path {
+                        fill: gray;
+                    }
+                }
+            }
+
+            span {
+                font-size: .9rem;
+                color: gray;
+            }
+        }
+
+        .rui-input-uploader__item {
+            &:hover {
+                background-color: $lightgray;
+            }
+        }
+
+        .rui-input-uploader__item-image {
+            & > span {
+                color: $dark;
+            }
+        }
+    }
+
+    &:not(.drop-box) {
+        .rui-input-uploader__container {
+            &.rounded {
+                border-radius: 60px;
+            }
+        }
+    }
+
+    .rui-input-uploader__container {
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        border: 1px solid lightgray;
+        background-color: $lightgray;
+
+        &.lifted {
+            box-shadow: 0 1px 3px rgba(black, .2);
+        }
+
+        &:not(.disabled) {
+            cursor: pointer;
+
+            label, i {
+                cursor: pointer;
+            }
+        }
+
+        &.disabled {
+            cursor: not-allowed;
+
+            label, i {
+                cursor: not-allowed;
+            }
+        }
+
+        &:not(.rounded):not(.smooth) {
+            border-radius: $radius;
+        }
+
+        &.tile {
+            border-radius: 0;
+        }
+
+        &.smooth {
+            border-radius: $radius * 2;
+        }
+
+        &:not(.medium):not(.large) {
+            height: $defaultSize;
+        }
+
+        &.medium {
+            height: $mediumSize;
+
+        }
+
+        &.large {
+            height: $largeSize;
+        }
+
+        &:hover {
+            transition: all .2s ease-in-out;
+
+            label {
+                transition: all .2s ease-in-out;
+            }
+
+            path {
+                transition: all .2s ease-in-out;
+            }
+        }
+
+        &.info {
+            &:hover {
+                border-color: $info;
+        
+                label {
+                    color: $info;
+                }
+
+                path {
+                    fill: $info;
+                }
+            }
+        }
+        
+        &.primary {
+            &:hover {
+                border-color: $primary;
+        
+                label {
+                    color: $primary;
+                }
+
+                path {
+                    fill: $primary;
+                }
+            }
+        }
+
+        &.success {
+            &:hover {
+                border-color: $success;
+        
+                label {
+                    color: $success;
+                }
+
+                path {
+                    fill: $success;
+                }
+            }
+        }
+
+        &.error {
+            &:hover {
+                border-color: $error;
+        
+                label {
+                    color: $error;
+                }
+
+                path {
+                    fill: $error;
+                }
+            }
+        }
+
+        label {
+            display: block;
+            width: calc(100% - 50px);
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            outline: none;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+
+            &:not(:disabled) {
+                cursor: pointer;
+            }
+
+            &:disabled {
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    .rui-input-uploader__items {
+        margin-top: 5px;
+        border: 1px solid lightgray;
+        overflow: hidden;
+
+        &:not(.rounded) {
+            border-radius: $radius;
+        }
+    
+        &.rounded {
+            border-radius: 10px;
+        }
+    }
+
+    .rui-input-uploader__item {
+        padding: 5px 0;
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid lightgray;
+
+        & > span {
+            width: calc(100% - 30px);
+            font-size: .9rem;
+            line-height: 18px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &:hover {
+            transition: all .2s ease-in-out;
+        }
+
+        i {
+            margin: 0 5px;
+            cursor: pointer;
+            svg {
+                path {
+                    fill: $error;
+                }
+            }
+        }
+    }
+}

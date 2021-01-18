@@ -1,0 +1,55 @@
+.rui-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $radius;
+    padding: 4px;
+    overflow: hidden;
+    border: 1px solid $linegray;
+
+    &.transparent {
+        background-color: transparent !important;
+        border-color: transparent;
+    }
+
+    &.rounded {
+        border-radius: 50%;
+    }
+
+    &.smooth {
+        border-radius: 12px;
+    }
+
+    &.tile {
+        border-radius: 0;
+    }
+
+    &.lifted {
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,.15);
+    }
+
+    &.dark {
+        background-color: $night;
+    }
+
+    &:not(.dark) {
+        background-color: $lightgray;
+    }
+
+    img {
+        width: 99%;
+    }
+
+    .rui-icon {
+        width: 95%;
+        height: 95%;
+    }
+
+    span {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 3.2rem;
+        font-weight: bold;
+        color: gray;
+    }
+}

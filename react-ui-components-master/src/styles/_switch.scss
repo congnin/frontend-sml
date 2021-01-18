@@ -1,0 +1,233 @@
+.rui-switch-container {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 5px;
+
+    &:not(.medium):not(.large) {
+        .rui-switch-right-label,
+        .rui-switch-left-label {
+            font-size: $defaultFont;
+        }
+    }
+
+    &.medium {
+        .rui-switch-right-label,
+        .rui-switch-left-label {
+            font-size: $mediumFont;
+        }
+    }
+
+    &.large {
+        .rui-switch-right-label,
+        .rui-switch-left-label {
+            font-size: $largeFont;
+        }
+    }
+
+    &.vertical {
+        flex-direction: column;
+        display: inline-flex;
+
+        & > .rui-switch {
+            height: 34px;
+            width: 18px;
+
+            & > span {
+                left: -2px;
+            }
+
+            &.disactive {
+                & > span {
+                    top: -1px;
+                    background-color: lightgray;
+                }
+            }
+        
+            &.active {
+                & > span {
+                    bottom: -1px;
+                    background-color: gray;
+                }
+            }
+        }
+    }
+
+    &:not(.vertical) > .rui-switch {
+
+        & > span {
+            top: -2px;
+        }
+
+        &.disactive {
+            & > span {
+                left: -1px;
+                background-color: lightgray;
+            }
+        }
+    
+        &.active {
+            & > span {
+                right: -1px;
+                background-color: gray;
+            }
+        }
+    }
+
+    .rui-switch {
+        border-radius: 60px;
+        border: 1px solid lightgray;
+        width: 34px;
+        height: 18px;
+        display: flex;
+        position: relative;
+    
+        &:not(.disabled) {
+            cursor: pointer;
+        }
+    
+        & > span {
+            width: 21px;
+            height: 21px;
+            border-radius: 50%;
+            position: absolute;
+            transition: all .3s ease-in-out;
+        }
+    
+        &.primary {
+            &.active {
+                border-color: $primary;
+            }
+
+            &.active > span {
+                background-color: $primary;
+            }
+    
+            &.disactive:not(.double) > span {
+                background-color: lightgray;
+            }
+
+            &.double > span {
+                background-color: $primary;
+            }
+        }
+    
+        &.info {
+            &.active {
+                border-color: $info;
+            }
+    
+            &.active > span {
+                background-color: $info;
+            }
+    
+            &.disactive:not(.double) > span {
+                background-color: lightgray;
+            }
+
+            &.double > span {
+                background-color: $info;
+            }
+        }
+    
+        &.success {
+            &.active {
+                border-color: $success;
+            }
+    
+            &.active > span {
+                background-color: $success;
+            }
+    
+            &.disactive:not(.double) > span {
+                background-color: lightgray;
+            }
+
+            &.double > span {
+                background-color: $success;
+            }
+        }
+    
+        &.error {
+            &.active {
+                border-color: $error;
+            }
+    
+            &.active > span {
+                background-color: $error;
+            }
+    
+            &.disactive:not(.double) > span {
+                background-color: lightgray;
+            }
+
+            &.double > span {
+                background-color: $error;
+            }
+        }
+    
+        &.disabled {
+            border-color: lightgray;
+            cursor: not-allowed;
+
+            &.active {
+                border-color: lightgray;
+            }
+    
+            &.active > span {
+                background-color: lightgray;
+            }
+    
+            &.disactive > span {
+                background-color: lightgray;
+            }
+        }
+    }
+
+    svg {
+        width: 18px;
+        min-width: 18px;
+        height: 18px;
+    }
+
+    .rui-switch-right-label,
+    .rui-switch-left-label {
+        font-size: $defaultFont;
+    }
+
+    &:not(.vertical) {
+        .rui-switch-left-label {
+            margin-right: 5px;
+        }
+
+        .rui-switch-right-label {
+            margin-left: 5px;
+        }
+
+        svg:first-child {
+            margin-right: 5px;
+        }
+    
+        svg:last-child {
+            margin-left: 5px;
+        }
+    }
+
+    &.vertical {
+        .rui-switch-left-label {
+            margin-bottom: 5px;
+        }
+
+        .rui-switch-right-label {
+            margin-top: 5px;
+        }
+
+
+        svg:first-child {
+            margin-bottom: 5px;
+        }
+    
+        svg:last-child {
+            margin-top: 5px;
+        }
+    }
+}

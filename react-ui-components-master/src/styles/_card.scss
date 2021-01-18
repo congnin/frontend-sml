@@ -1,0 +1,55 @@
+.rui-card {
+    border: 1px solid transparent;
+    border-radius: $radius * 1.5;
+    padding: 15px;
+
+    &.dark {
+        border-color: $night;
+        box-shadow: 0 0 3px rgba(lightgray, .3);
+
+        .rui-card-header {
+            color: #fff;
+        }
+
+        &.hover {
+            &:hover {
+                box-shadow: 0 1px 10px rgba(lightgray, .3) !important;
+                transition: all .3s ease-in-out;
+            }
+        }
+    }
+
+    &.flat {
+        &:not(.dark) {
+            border-color: lightgray;
+        }
+        &.dark {
+            border-color: $night;
+        }
+        box-shadow: none;
+    }
+
+    &:not(.flat):not(.outlined):not(.dark) {
+        box-shadow: 0 0 3px 0 rgba(0,0,0,.25);
+    }
+
+    &.hover {
+        cursor: pointer;
+        
+        &:hover {
+            box-shadow: 0 1px 10px rgba(black, .3) !important;
+            transition: all .3s ease-in-out;
+        }
+    }
+}
+
+.rui-card-header {
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.rui-card-footer {
+    border-top: 1px solid $linegray;
+    padding: 10px;
+    font-size: $defaultFont;
+}

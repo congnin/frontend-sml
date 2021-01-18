@@ -1,0 +1,48 @@
+.rui-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+    padding: 0 15px;
+    position: static;
+
+    &.sticky {
+        position: sticky;
+        z-index: 1000;
+        top: 0;
+    }
+
+    &:not(.dark) {
+        &.lifted {
+            box-shadow: 0 1px 3px 0 rgba(#000, .3);
+        }
+    }
+
+    &.smooth {
+        border-radius: $radius * 1.5;
+    }
+
+    &.light {
+        background-color: $lightgray;
+    }
+
+    &.dark {
+        background-color: $night;
+
+        &.lifted {
+            box-shadow: 0 1px 3px 0 rgba(lightgray, .3);
+        }
+
+        .rui-header__title {
+            color: white;
+        }
+    }
+}
+
+
+@media (max-width: #{$xs}) {
+    .rui-header {
+        padding: 0 10px;
+    }
+}

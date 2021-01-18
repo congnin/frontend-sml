@@ -1,0 +1,539 @@
+.rui-btn {
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    border: none;
+    outline: none;
+    border-radius: $radius;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $lightgray;
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 0 8px;
+    overflow: hidden;
+    position: relative;
+
+    .rui-btn__text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &.allotted:not(.icon-left) {
+        padding: 0;
+        padding-left: 8px;
+    }
+
+    &.icon-left {
+        padding: 0;
+        padding-right: 8px;
+        padding-left: 8px;
+        margin-right: 5px;
+    }
+
+    &:not(.icon-left) {
+        .rui-btn__allotted-icon {
+            margin-left: 5px;
+        }
+    }
+
+    .rui-btn__allotted-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $gray;
+    }
+
+    &:not(.rui-icon) {
+        min-width: 80px;
+    }
+
+    &.loading {
+        svg {
+            animation: loading .8s infinite ease-in;
+            -moz-animation: loading .8s infinite ease-in;
+        }
+    }
+
+    &.lifted {
+        box-shadow: 0 1px 5px rgba(black, .4);
+        &:active:not(:disabled) {
+            box-shadow: 0 1px 5px rgba(black, .3);
+        }
+    }
+
+    &:not(.icon):not(.medium):not(.large),
+    & > .rui-btn__text {
+        height: $defaultSize;
+        font-size: $defaultFont;
+
+        .rui-btn__allotted-icon {
+            height: $defaultSize;
+            width: $defaultSize + 5px;
+            min-width: $defaultSize + 5px;
+        }
+    }
+
+    &.uppercase > .rui-btn__text {
+        text-transform: uppercase;
+        font-size: $defaultFont;
+    }
+
+    & > span {
+        height: 100%;
+    }
+
+    &.smooth {
+        border-radius: $radius * 2.3;
+    }
+
+    &.tile {
+        border-radius: 0;
+    }
+
+    &.icon {
+        border-radius: 50%;
+        padding: 0;
+
+        .i {
+            margin: 0 !important;
+        }
+    }
+
+    &.icon:not(.medium):not(.large) {
+        width: $defaultSize;
+        min-width: $defaultSize;
+        height: $defaultSize;
+    }
+
+    &.medium {
+        height: $mediumSize;
+        padding: 0 10px;
+
+        & > .rui-btn__text {
+            height: $mediumSize;
+            font-size: $mediumFont;
+        }
+
+        &.uppercase > .rui-btn__text {
+            font-size: $mediumFont;
+        }
+
+        &.icon {
+            width: $mediumSize;
+            min-width: $mediumSize;
+            height: $mediumSize;
+        }
+
+        .rui-btn__allotted-icon {
+            height: $mediumSize;
+            width: $mediumSize;
+            min-width: $mediumSize + 5px;
+        }
+    }
+
+    &.large {
+        height: $largeSize;
+        padding: 0 15px;
+
+        & > .rui-btn__text {
+            height: $largeSize;
+            font-size: 1rem;
+        }
+
+        &.uppercase {
+            & > .rui-btn__text {
+                font-size: $largeFont;
+            }
+        }
+
+        &.icon {
+            width: $largeSize;
+            min-width: $largeSize;
+            height: $largeSize;
+        }
+
+        .rui-btn__allotted-icon {
+            width: $largeSize;
+            height: $largeSize;
+            min-width: $largeSize + 5px;
+        }
+    }
+
+    &.disabled:not(.outlined),
+    &.loading:not(.outlined) {
+        cursor: not-allowed;
+        box-shadow: none;
+        background-color: $gray;
+        border-color: $gray;
+        color: gray;
+        box-shadow: none;
+    }
+
+    &.disabled.outlined,
+    &.loading.outlined {
+        cursor: not-allowed;
+        box-shadow: none;
+        background-color: transparent;
+        border: 1px solid $gray;
+        box-shadow: none;
+
+        path {
+            fill: lightgray;
+        }
+    }
+
+    &:active:not(:disabled):not(.loading) {
+        box-shadow: 0 0 10px rgba(black, .4);
+    }
+
+    &:hover {
+        transition: all .3s ease-in-out;
+        path {
+            transition: all .3s ease-in-out;
+        }
+    }
+
+    &.primary {
+        background-color: $primary;
+        color: #fff;
+
+        &:focus {
+            box-shadow: 0 0 5px rgba($primary, .5);
+        }
+
+        &:not(:disabled):hover,
+        &.active,
+        .rui-btn__allotted-icon {
+            background-color: darken($primary, 8%);
+        }
+
+        path {
+            fill: #fff;
+        }
+    }
+
+    &.primary.outlined {
+        background-color: #fff;
+        color: $primary;
+        border: 1px solid $primary;
+
+        &:not(:disabled):hover,
+        &.active,
+        .rui-btn__allotted-icon {
+            background-color: $primary;
+            border-color: $primary;
+            color: #fff;
+
+            path {
+                fill: #fff;
+            }
+        }
+
+        path {
+            fill: $primary;
+        }
+    }
+
+    &.secondary {
+        background-color: $gray;
+
+        &:focus {
+            box-shadow: 0 0 5px rgba($gray, .5);
+        }
+
+        &:not(:disabled):hover {
+            background-color: darken($gray, 5%);
+        }
+
+        &.active,
+        .rui-btn__allotted-icon {
+            background-color: darken($gray, 10%);
+        }
+    }
+
+    &.secondary.outlined {
+        background-color: #fff;
+        border: 1px solid $gray;
+        
+        &:not(:disabled) {
+            color: $dark;
+        }
+
+        &:not(:disabled):hover,
+        &.active,
+        .rui-btn__allotted-icon {
+            background-color: $gray;
+            border-color: $gray;
+            color: $dark;
+        }
+
+        path {
+            fill: $dark;
+        }
+    }
+
+    &.info {
+        background-color: $info;
+        color: #fff;
+        
+        &:focus {
+            box-shadow: 0 0 5px rgba($info, .5);
+        }
+
+        &:not(:disabled):hover,
+        &.active,
+        .rui-btn__allotted-icon {
+            background-color: darken($info, 10%);
+        }
+
+        path, polygon {
+            fill: #fff;
+        }
+    }
+
+    &.info.outlined {
+        background-color: #fff;
+        border: 1px solid $info;
+        color: $info;
+
+        &:not(:disabled):hover,
+        &.active,
+        .rui-btn__allotted-icon {
+            background-color: $info;
+            border-color: $info;
+            color: #fff;
+
+            path, polygon {
+                fill: #fff;
+            }
+        }
+
+        path {
+            fill: $info;
+        }
+    }
+
+    &.success {
+        background-color: $success;
+        color: #fff;
+
+        &:focus {
+            box-shadow: 0 0 5px rgba($success, .5);
+        }
+
+        &:not(:disabled):hover,
+        &.active,
+        .rui-btn__allotted-icon {
+            background-color: darken($success, 10%);
+        }
+
+        path {
+            fill: #fff;
+        }
+    }
+
+    &.success.outlined {
+        border: 1px solid $success;
+        background-color: #fff;
+        color: $success;
+
+        &:not(:disabled):hover,
+        &.active,
+        .rui-btn__allotted-icon {
+            color: #fff;
+            background-color: $success;
+            border-color: $success;
+
+            path {
+                fill: #fff;
+            }
+        }
+
+        path {
+            fill: $success;
+        }
+    }
+
+    &.error {
+        background-color: $error;
+        color: #fff;
+
+        &:focus {
+            box-shadow: 0 0 5px rgba($error, .5);
+        }
+
+        &:not(:disabled):hover,
+        &.active,
+        .rui-btn__allotted-icon {
+            background-color: darken($error, 10%);
+        }
+
+        path {
+            fill: #fff;
+        }
+    }
+
+    &.error.outlined {
+        border: 1px solid $error;
+        background-color: #fff;
+        color: $error;
+
+        &:not(:disabled):hover,
+        &.active,
+        .rui-btn__allotted-icon {
+            color: #fff;
+            background-color: $error;
+
+            path {
+                fill: #fff;
+            }
+        }
+
+        path {
+            fill: $error;
+        }
+    }
+
+    &.black {
+        background-color: $dark;
+        color: #fff;
+
+        &:focus {
+            box-shadow: 0 0 5px rgba($dark, .5);
+        }
+
+        &:not(:disabled):hover,
+        &.active,
+        .rui-btn__allotted-icon {
+            background-color: darken($dark, 15%);
+        }
+
+        path {
+            fill: #fff;
+        }
+    }
+
+    &.light {
+        border-color: transparent;
+        background-color: transparent;
+        color: $dark;
+
+        &:not(:disabled):hover {
+            background-color: rgba(#ccc, .3);
+        }
+
+        path {
+            // fill: $dark;
+        }
+    }
+
+    &.dark {
+        border-color: transparent;
+        background-color: transparent;
+        color: #fff;
+
+        &:not(:disabled):hover {
+            background-color: rgba($lightgray, .3);
+        }
+
+        path {
+            fill: #fff;
+        }
+    }
+
+    &.block {
+        width: 100%;
+    }
+
+    &.rounded {
+        border-radius: 60px;
+    }
+}
+
+.rui-btn-back-top {
+    transition: all .5s ease-in-out;
+    position: absolute;
+    z-index: 999;
+
+    &:not(.dark) {
+        button,
+        button:hover {
+            background-color: rgba($light, .9);
+            path {
+                fill: gray;
+            }
+        }
+    }
+
+    &.dark {
+        button {
+            background-color: rgba(black, .4);
+            path {
+                fill: #fff;
+            }
+
+            &:hover {
+                background-color: rgba(black, .6) !important;
+
+                path {
+                    fill: #fff !important;
+                }
+            }
+        }
+    }
+}
+
+.btn-back-top-enter {
+    opacity: 0;
+    transform: scale(.9);
+}
+
+.btn-back-top-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 500, transform 500;
+}
+
+.btn-back-top-exit {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.btn-back-top-exit-active {
+    opacity: 0;
+    transform: scale(.9);
+    transition: opacity 500, transform 500;;
+}
+
+.rui-btn-group {
+    border-radius: $radius;
+    overflow: hidden;
+    display: inline-flex;
+
+    &.lifted:not(:disabled) {
+        box-shadow: 0 1px 5px rgba(black, .3);
+    }
+
+    .rui-btn {
+        min-width: 30px;
+        border-radius: 0;
+        margin: 0;
+        
+        &:not(:last-child) {
+            border-right: 1px solid transparent !important;
+        }
+
+        &:first-child {
+            border-top-left-radius: $radius;
+            border-bottom-left-radius: $radius;
+        }
+
+        &:last-child {
+            border-top-right-radius: $radius;
+            border-bottom-right-radius: $radius;
+        }
+    }
+}
