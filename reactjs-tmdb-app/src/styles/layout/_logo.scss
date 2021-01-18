@@ -1,0 +1,16 @@
+/* logo */
+.logo {
+  width: 100%;
+  max-width: 140px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  display: block;
+}
+
+// sm up
+@media (min-width: 768px) {
+  .logo {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+}
