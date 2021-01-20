@@ -1,0 +1,75 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.10/libexec/bin/yarn.js install
+
+PATH: 
+  /Users/quocnd/google-cloud-sdk-dev/google-cloud-sdk/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/quocnd/google-cloud-sdk-dev/google-cloud-sdk/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/quocnd/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/quocnd/google-cloud-sdk-dev/google-cloud-sdk/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/quocnd/bin:/Users/quocnd/bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  10.17.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: connect ENETUNREACH 104.16.22.35:443 - Local (0.0.0.0:65240)
+      at internalConnect (net.js:882:16)
+      at defaultTriggerAsyncIdScope (internal/async_hooks.js:294:19)
+      at emitLookup (net.js:1029:9)
+      at /usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:107524:28
+      at /usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:107433:13
+      at RawTask.module.exports.RawTask.call (/usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:83614:19)
+      at flush (/usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:83696:29)
+      at process._tickCallback (internal/process/next_tick.js:61:11)
+
+npm manifest: 
+  {
+    "name": "mongodb-stitch-todo-web",
+    "version": "1.0.0",
+    "description": "",
+    "keywords": [],
+    "main": "src/index.js",
+    "dependencies": {
+      "@emotion/core": "10.0.9",
+      "@emotion/styled": "10.0.9",
+      "@fortawesome/fontawesome-svg-core": "1.2.17",
+      "@fortawesome/free-solid-svg-icons": "5.8.1",
+      "@fortawesome/react-fontawesome": "0.1.4",
+      "@reach/router": "1.2.1",
+      "@rooks/use-timeout": "1.2.0",
+      "bootstrap": "4.3.1",
+      "dotenv": "7.0.0",
+      "leaflet": "1.4.0",
+      "leaflet.awesome-markers": "2.0.5",
+      "mongodb-stitch-browser-sdk": "~4.5.0",
+      "react": "16.8.3",
+      "react-dom": "16.8.3",
+      "react-error-boundary": "1.2.3",
+      "react-leaflet": "2.2.1",
+      "react-scripts": "2.1.8",
+      "reactstrap": "7.1.0"
+    },
+    "devDependencies": {
+      "typescript": "3.3.3"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test --env=jsdom",
+      "eject": "react-scripts eject"
+    },
+    "browserslist": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all"
+    ]
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
