@@ -1,0 +1,21 @@
+@import 'colors';
+
+.alert {
+    font-size: 1rem;
+    text-align: center;
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &.success {
+        color: $success;
+        border-color: $success;
+    }
+
+    &.error {
+        color: $error;
+        border-color: $error;
+    }
+}

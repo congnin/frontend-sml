@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+@import 'colors';
+@import 'app-header';
+@import 'icon';
+@import 'chats';
+@import 'btn';
+@import 'active-chat';
+@import 'chat-messages';
+@import 'drawer';
+@import 'auth';
+@import 'register';
+@import 'form';
+@import 'alert';
+@import 'preloader';
+@import 'modal';
+@import 'account';
+@import 'checkbox';
+@import 'author';
+@import 'snackbar';
+@import 'helpers';
+
+* {
+  font-family: 'Nunito Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}

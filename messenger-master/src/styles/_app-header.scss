@@ -1,0 +1,28 @@
+@import 'colors';
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    margin: 5px 0;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    padding: 0.2% 2%;
+    background-color: $primary;
+    background: linear-gradient(90deg, rgba(#01579B,1) 0%, rgba($primary,1) 50%, rgba(3,155,229,1) 100%);
+    color: #fff;
+    position: relative;
+}
+
+.app-header__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+@media (max-width: 450px) {
+    .app-header {
+        margin: 0 !important;
+    }
+}
