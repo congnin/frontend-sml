@@ -4,6 +4,7 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const morganBody = require('morgan-body');
 
 const placesRoutes = require('./routes/places-routes');
 const usersRoutes = require('./routes/users-routes');
@@ -12,6 +13,9 @@ const HttpError = require('./models/http-error');
 const app = express();
 
 app.use(bodyParser.json());
+
+// hook morganBody to express app (Unlike typical express middleware you're passing the actual app into the function)
+morganBody(app);
 
 app.use('/uploads/images', express.static(path.join('uploads', 'images')));
 
