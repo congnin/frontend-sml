@@ -1,0 +1,10 @@
+{
+  "env": {
+    "DB_USER": "mernAppUser",
+    "DB_PASSWORD": "mernAppPwd",
+    "DB_NAME": "mern",
+    "GEO_API_KEY": "pk.5fc6c04b4e845c294fe94bfa82122165",
+    "JWT_KEY": "supersecret_dont_share",
+    "TOKEN_EXPIRE": "1h"
+  }
+}
