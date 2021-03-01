@@ -3,6 +3,18 @@ const router = express.Router();
 const userController = require("./../controllers/userController");
 const authController = require("./../controllers/authController");
 
+router.patch(
+  "/testUpload",
+  userController.cloudinaryPhotoUpload,
+  function (req, res, next) {
+    console.log(req);
+    const image = {};
+    image.url = req.file.url;
+    image.id = req.file.public_id;
+    res.json(req.photo);
+  }
+);
+
 router.post("/signup", authController.signup);
 router.post("/signupGuest", authController.signupGuest);
 router.post("/login", authController.login);

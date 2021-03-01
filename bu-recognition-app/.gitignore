@@ -12,8 +12,6 @@
 /build
 
 # misc
-#config.env
-cypress.json
 .DS_Store
 .env.local
 .env.development.local

@@ -19,7 +19,8 @@ const storage = new CloudinaryStorage({
   cloudinary,
   params: {
     folder: (req, file) => "MaterialChat",
-    public_id: (req, file) => `user-${req.user._id}-${Date.now()}`,
+    // public_id: (req, file) => `user-${req.user._id}-${Date.now()}`,
+    public_id: (req, file) => `computed-filename-using-request`,
     // transformation: [{ width: 400, height: 400, crop: "limit" }],
   },
 });
@@ -34,8 +35,7 @@ const fileFilter = (req, file, cb) => {
 };
 
 const parser = multer({
-  storage,
-  fileFilter,
+  storage: storage,
 });
 
 exports.cloudinaryPhotoUpload = parser.single("photo");

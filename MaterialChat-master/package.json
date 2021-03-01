@@ -15,7 +15,7 @@
     "cy": "cypress open"
   },
   "engines": {
-    "node": "13.6.x"
+    "node": "13.7.x"
   },
   "author": "Kyle JVH",
   "license": "ISC",
