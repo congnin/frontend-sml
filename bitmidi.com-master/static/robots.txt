@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /uploads/
-
-Sitemap: https://bitmidi.com/sitemap.xml
