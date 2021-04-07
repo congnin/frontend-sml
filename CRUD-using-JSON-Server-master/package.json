@@ -1,0 +1,19 @@
+{
+  "name": "crud-using-json-server",
+  "version": "1.0.0",
+  "description": "crud operation using json-server",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all --parallel json-server --watch db.json & json-server-auth --watch db.json",
+    "dev": "json-server --watch db.json",
+    "auth": "json-server-auth --watch db.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "faker": "^5.4.0",
+    "json-server": "^0.12.2",
+    "json-server-auth": "^2.0.2"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "email": "congnc7@mail.com",
+      "password": "$2a$10$rhnVxyd/KUS59.tJLJsAN.rVMUCBq6PG445iIoxtvRIqLC3gmhq32",
+      "id": 1
+    },
+    {
+      "email": "junior@mail.com",
+      "password": "$2a$10$aaYNOpJHE9jPPn35X0N4pOChqKrAhjioKQQCIsjJYJDZkIb8y1uLO",
+      "id": 2
+    }
+  ]
+}
