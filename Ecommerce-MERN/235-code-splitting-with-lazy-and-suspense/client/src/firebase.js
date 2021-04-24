@@ -1,14 +1,13 @@
-import * as firebase from "firebase";
+import * as firebase from 'firebase';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDniyhK46KyCVzN4PkypDIKjMEZLfTUx64",
-  authDomain: "ecommerce-225c8.firebaseapp.com",
-  databaseURL: "https://ecommerce-225c8.firebaseio.com",
-  projectId: "ecommerce-225c8",
-  storageBucket: "ecommerce-225c8.appspot.com",
-  messagingSenderId: "593746841585",
-  appId: "1:593746841585:web:f0090fc9296a27f7c67e50",
+  apiKey: 'AIzaSyCM3oVu28j4wAMxAu7UBVTSkTRq0AV8LyY',
+  authDomain: 'my-commerce-e59fd.firebaseapp.com',
+  projectId: 'my-commerce-e59fd',
+  storageBucket: 'my-commerce-e59fd.appspot.com',
+  messagingSenderId: '675888276554',
+  appId: '1:675888276554:web:70d8b0e526c7366694f2b3',
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
