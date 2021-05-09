@@ -2,16 +2,15 @@ import fetch from 'isomorphic-fetch';
 import { API } from '../config';
 
 export const createBlog = (blog, token) => {
-    return fetch(`${API}/blog`, {
-        method: 'POST',
-        headers: {
-            Accept: 'application/json',
-            Authorization: `Bearer ${token}`
-        },
-        body: blog
+  return fetch(`${API}/blog`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    body: blog,
+  })
+    .then((response) => {
+      return response.json();
     })
-        .then(response => {
-            return response.json();
-        })
-        .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };
