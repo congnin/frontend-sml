@@ -75,6 +75,11 @@ For example, if the subdirectory I want to deploy my-app is in the root my-repo,
 git subtree push --prefix my-app heroku master
 ```
 
+### Handle Error deploy reactjs to heroku
+```
+https://github.com/mars/create-react-app-buildpack
+```
+
 ### And then...
 
 ```
